@@ -17,6 +17,7 @@ The following things have been instantiated in the block diagram design:
 - Microblaze Debug Module V
 - Processor System Reset
 - AXI UART Lite
+- AXI GPIO: The switches and buttons are concatenated using Concat block and connected to GPIO channel 1. The LEDs are connected to GPIO channel 2.
 - AXI Interconnect for connecting the peripherals labelled as AXI with the Microblaze CPU
 
 <img src="img/BlockDiagram.png">
@@ -48,9 +49,16 @@ The elements in the block diagram are configured with double click as follows:
     - Stop bits:1
     - Parity: None
 
-- AXI Interrupt Controller:
+- AXI GPIO:
+    - Use Dual Channel: ON
+    - Channel 1: Tick "All Inputs"
+    - Channel 2: Tick "All Outputs"
+- AXI Interconnect:
     - Number of Slave Interfaces: 2
     - Number of Master Interfaces: 3
+
+- AXI Interrupt Controller
+    - Use Fast Logic: ON
 
 Also, go in Vivado to Window > Address Editor and ensure that you have exactly what is displayed in the below image:
 <img src="img/AddressEditor.png">
