@@ -23,9 +23,9 @@
 
   <Version>4.2</Version>
 
-  <SystemClock>No Buffer</SystemClock>
+  <SystemClock>Differential</SystemClock>
 
-  <ReferenceClock>No Buffer</ReferenceClock>
+  <ReferenceClock>Use System Clock</ReferenceClock>
 
   <SysResetPolarity>ACTIVE LOW</SysResetPolarity>
 
@@ -45,12 +45,12 @@
 
   <Controller number="0">
     <MemoryDevice>DDR3_SDRAM/Components/MT41J256m16XX-107</MemoryDevice>
-    <TimePeriod>3125</TimePeriod>
+    <TimePeriod>2500</TimePeriod>
     <VccAuxIO>1.8V</VccAuxIO>
     <PHYRatio>4:1</PHYRatio>
-    <InputClkFreq>320</InputClkFreq>
+    <InputClkFreq>200</InputClkFreq>
     <UIExtraClocks>0</UIExtraClocks>
-    <MMCM_VCO>640</MMCM_VCO>
+    <MMCM_VCO>800</MMCM_VCO>
     <MMCMClkOut0> 1.000</MMCMClkOut0>
     <MMCMClkOut1>1</MMCMClkOut1>
     <MMCMClkOut2>1</MMCMClkOut2>
@@ -143,6 +143,9 @@
       <Pin IN_TERM="" IOSTANDARD="LVCMOS15" PADName="AG5" SLEW="" VCCAUX_IO="NORMAL" name="ddr3_reset_n"/>
       <Pin IN_TERM="" IOSTANDARD="SSTL15" PADName="AG13" SLEW="" VCCAUX_IO="NORMAL" name="ddr3_we_n"/>
     </PinSelection>
+    <System_Clock>
+      <Pin Bank="33" PADName="AD12/AD11(CC_P/N)" name="sys_clk_p/n"/>
+    </System_Clock>
     <System_Control>
       <Pin Bank="Select Bank" PADName="No connect" name="sys_rst"/>
       <Pin Bank="Select Bank" PADName="No connect" name="init_calib_complete"/>

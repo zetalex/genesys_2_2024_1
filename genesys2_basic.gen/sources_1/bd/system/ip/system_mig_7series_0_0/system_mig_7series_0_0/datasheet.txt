@@ -38,7 +38,7 @@ Controller Options :
 
    Design Clock Frequency        : 2500 ps (  0.00 MHz)
 
-   Phy to Controller Clock Ratio : 2:1
+   Phy to Controller Clock Ratio : 4:1
 
    Input Clock Period            : 5000 ps
 

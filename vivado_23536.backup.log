@@ -1,0 +1,491 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Jan 22 14:03:04 2025
+# Process ID: 23536
+# Current directory: C:/Users/Alejandro/Documents/git/genesys2_basic
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22704 C:\Users\Alejandro\Documents\git\genesys2_basic\genesys2_basic.xpr
+# Log file: C:/Users/Alejandro/Documents/git/genesys2_basic/vivado.log
+# Journal file: C:/Users/Alejandro/Documents/git/genesys2_basic\vivado.jou
+# Running On        :DESKTOP-3VUNQ5R
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :AMD Ryzen 9 5900HX with Radeon Graphics        
+# CPU Frequency     :3294 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :16558 MB
+# Swap memory       :5436 MB
+# Total Virtual     :21995 MB
+# Available Virtual :8951 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:15 . Memory (MB): peak = 1608.969 ; gain = 485.180
+open_bd_design {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd}
+Reading block design file <C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd>...
+Adding component instance block -- xilinx.com:ip:mig_7series:4.2 - mig_7series_0
+Adding component instance block -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding component instance block -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding component instance block -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding component instance block -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_100M
+Adding component instance block -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - microblaze_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_ds
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_ds
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding component instance block -- xilinx.com:ip:mdm_riscv:1.0 - mdm_1
+Adding component instance block -- xilinx.com:ip:microblaze_riscv:1.0 - microblaze_0
+Adding component instance block -- xilinx.com:ip:axi_intc:4.1 - axi_intc_0
+Successfully read diagram <system> from block design file <C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd>
+open_bd_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1736.812 ; gain = 93.562
+update_compile_order -fileset sources_1
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Device 21-9227] Part: xc7k325tffg900-2 does not have CEAM library.
+set_property CONFIG.XML_INPUT_FILE {c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/ip/system_mig_7series_0_0/mig_a.prj} [get_bd_cells mig_7series_0]
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/ip/system_mig_7series_0_0/mig_a.prj' provided. It will be converted relative to IP Instance files 'mig_a.prj'
+set_property CONFIG.RESET_BOARD_INTERFACE {reset} [get_bd_cells mig_7series_0]
+set_property CONFIG.MIG_DONT_TOUCH_PARAM {Custom} [get_bd_cells mig_7series_0]
+set_property CONFIG.BOARD_MIG_PARAM {ddr3_sdram} [get_bd_cells mig_7series_0]
+save_bd_design
+Wrote  : <C:\Users\Alejandro\Documents\git\genesys2_basic\genesys2_basic.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/09bd/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/09bd/simulation/blk_mem_gen_v8_4.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/1443/hdl/fifo_generator_v13_2_rfs.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/1443/hdl/fifo_generator_v13_2_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/1443/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/1443/simulation/fifo_generator_vlog_beh.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/14b9/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/14b9/hdl/axi_dwidth_converter_v2_1_vl_rfs.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/1a4c/hdl/microblaze_riscv_v1_0_vh_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/2959/hdl/axi_uartlite_v2_0_vh_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/3242/mmcm_pll_drp_func_7s_mmcm.vh' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/3242/mmcm_pll_drp_func_7s_pll.vh' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/3242/mmcm_pll_drp_func_us_mmcm.vh' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/3242/mmcm_pll_drp_func_us_pll.vh' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/3242/mmcm_pll_drp_func_us_plus_mmcm.vh' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/3242/mmcm_pll_drp_func_us_plus_pll.vh' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/3c06/hdl/axi_protocol_converter_v2_1_vl_rfs.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/3eb2/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/558f/hdl/axi_intc_v4_1_vh_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/7495/hdl/lmb_v10_v3_0_vh_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/80bf/hdl/axi_clock_converter_v2_1_vl_rfs.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/8c68/hdl/lib_pkg_v1_0_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/92b2/hdl/axi_register_slice_v2_1_vl_rfs.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/9692/hdl/axi_data_fifo_v2_1_vl_rfs.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/aa1c/hdl/microblaze_v11_0_vh_rfs.vhd' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/e9d8/hdl/axi_crossbar_v2_1_vl_rfs.v' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_0.vh' is not registered in generated file cache.
+WARNING: [IP_Flow 19-11785] File 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v' is not registered in generated file cache.
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+WARNING: [xilinx.com:ip:microblaze_riscv:1.0-25] /microblaze_0: Use Interrupt manual value (1) does not match computed value (2). Please review the manual value or consider using Auto instead.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /axi_intc_0: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /axi_intc_0: The AXI INTC core has been configured to operate with synchronous clocks.
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/mig_7series_0/device_temp_i
+
+Wrote  : <C:\Users\Alejandro\Documents\git\genesys2_basic\genesys2_basic.srcs\sources_1\bd\system\system.bd> 
+Verilog Output written to : c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/synth/system.v
+Verilog Output written to : c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/sim/system.v
+Verilog Output written to : c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/hdl/system_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_v10 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_v10 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_bram_if_cntlr .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/lmb_bram .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mdm_1 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_intc_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/s00_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/s01_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/m00_couplers/auto_ds .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/m01_couplers/auto_ds .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/m02_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/m02_couplers/auto_us .
+Exporting to file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/hw_handoff/system.hwh
+Generated Hardware Definition File c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/synth/system.hwdef
+INFO: [IP_Flow 19-6930] IPCACHE: runCacheChecks() number of threads = 8
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_auto_ds_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_auto_ds_1
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_auto_pc_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_auto_us_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_auto_us_1
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_auto_us_2
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_axi_intc_0_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_axi_uartlite_0_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_dlmb_bram_if_cntlr_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_dlmb_v10_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_ilmb_bram_if_cntlr_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_ilmb_v10_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_lmb_bram_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_mdm_1_riscv_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_microblaze_0_riscv_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_rst_mig_7series_0_100M_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP system_xbar_0
+INFO: [IP_Flow 19-8020] IPCACHE: runCacheChecks() calling threadPool finishWork()
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_auto_ds_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 4bc18671ee062dd1 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4bc18671ee062dd1/system_auto_ds_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4bc18671ee062dd1/system_auto_ds_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4bc18671ee062dd1/system_auto_ds_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4bc18671ee062dd1/system_auto_ds_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4bc18671ee062dd1/system_auto_ds_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_ds_0, cache-ID = 4bc18671ee062dd1; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_ilmb_bram_if_cntlr_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry c8b41b053b9aae2f to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/8/c8b41b053b9aae2f/system_dlmb_bram_if_cntlr_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/8/c8b41b053b9aae2f/system_dlmb_bram_if_cntlr_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/8/c8b41b053b9aae2f/system_dlmb_bram_if_cntlr_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/8/c8b41b053b9aae2f/system_dlmb_bram_if_cntlr_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/8/c8b41b053b9aae2f/system_dlmb_bram_if_cntlr_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_bram_if_cntlr_0/system_ilmb_bram_if_cntlr_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_ilmb_bram_if_cntlr_0, cache-ID = c8b41b053b9aae2f; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_auto_ds_1
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 4bc18671ee062dd1 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4bc18671ee062dd1/system_auto_ds_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4bc18671ee062dd1/system_auto_ds_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4bc18671ee062dd1/system_auto_ds_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4bc18671ee062dd1/system_auto_ds_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4bc18671ee062dd1/system_auto_ds_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_ds_1/system_auto_ds_1_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_ds_1, cache-ID = 4bc18671ee062dd1; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_ilmb_v10_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 37d89318efb21f32 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/7/37d89318efb21f32/system_dlmb_v10_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/7/37d89318efb21f32/system_dlmb_v10_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/7/37d89318efb21f32/system_dlmb_v10_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/7/37d89318efb21f32/system_dlmb_v10_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/7/37d89318efb21f32/system_dlmb_v10_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_ilmb_v10_0/system_ilmb_v10_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_ilmb_v10_0, cache-ID = 37d89318efb21f32; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_auto_pc_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 4b504346e703787c to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4b504346e703787c/system_auto_pc_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4b504346e703787c/system_auto_pc_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4b504346e703787c/system_auto_pc_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4b504346e703787c/system_auto_pc_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/4/b/4b504346e703787c/system_auto_pc_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = 4b504346e703787c; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_xbar_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry b2f1f417af75460b to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/b/2/b2f1f417af75460b/system_xbar_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/b/2/b2f1f417af75460b/system_xbar_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/b/2/b2f1f417af75460b/system_xbar_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/b/2/b2f1f417af75460b/system_xbar_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/b/2/b2f1f417af75460b/system_xbar_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_xbar_0/system_xbar_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_xbar_0, cache-ID = b2f1f417af75460b; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_auto_us_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry c35879f5bd90311e to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/3/c35879f5bd90311e/system_auto_us_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/3/c35879f5bd90311e/system_auto_us_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/3/c35879f5bd90311e/system_auto_us_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/3/c35879f5bd90311e/system_auto_us_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/3/c35879f5bd90311e/system_auto_us_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_0/system_auto_us_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_us_0, cache-ID = c35879f5bd90311e; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_auto_us_1
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 15be801f6d315579 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/1/5/15be801f6d315579/system_auto_us_1.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/1/5/15be801f6d315579/system_auto_us_1_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/1/5/15be801f6d315579/system_auto_us_1_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/1/5/15be801f6d315579/system_auto_us_1_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/1/5/15be801f6d315579/system_auto_us_1_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_1/system_auto_us_1_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_us_1, cache-ID = 15be801f6d315579; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_rst_mig_7series_0_100M_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry c14eae595c592960 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/1/c14eae595c592960/system_rst_mig_7series_0_100M_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/1/c14eae595c592960/system_rst_mig_7series_0_100M_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/1/c14eae595c592960/system_rst_mig_7series_0_100M_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/1/c14eae595c592960/system_rst_mig_7series_0_100M_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/1/c14eae595c592960/system_rst_mig_7series_0_100M_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_rst_mig_7series_0_100M_0/system_rst_mig_7series_0_100M_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_rst_mig_7series_0_100M_0, cache-ID = c14eae595c592960; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_auto_us_2
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 6c4ca81dff68e001 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/c/6c4ca81dff68e001/system_auto_us_2.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/c/6c4ca81dff68e001/system_auto_us_2_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/c/6c4ca81dff68e001/system_auto_us_2_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/c/6c4ca81dff68e001/system_auto_us_2_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/c/6c4ca81dff68e001/system_auto_us_2_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_auto_us_2/system_auto_us_2_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_us_2, cache-ID = 6c4ca81dff68e001; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_axi_intc_0_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry b2ce33fb02808e12 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/b/2/b2ce33fb02808e12/system_axi_intc_0_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0/system_axi_intc_0_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0/system_axi_intc_0_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/b/2/b2ce33fb02808e12/system_axi_intc_0_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0/system_axi_intc_0_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0/system_axi_intc_0_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/b/2/b2ce33fb02808e12/system_axi_intc_0_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0/system_axi_intc_0_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0/system_axi_intc_0_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/b/2/b2ce33fb02808e12/system_axi_intc_0_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0/system_axi_intc_0_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0/system_axi_intc_0_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/b/2/b2ce33fb02808e12/system_axi_intc_0_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0/system_axi_intc_0_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_intc_0_0/system_axi_intc_0_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_axi_intc_0_0, cache-ID = b2ce33fb02808e12; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_lmb_bram_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 315795c509a3927a to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/1/315795c509a3927a/system_lmb_bram_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0/system_lmb_bram_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0/system_lmb_bram_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/1/315795c509a3927a/system_lmb_bram_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0/system_lmb_bram_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0/system_lmb_bram_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/1/315795c509a3927a/system_lmb_bram_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0/system_lmb_bram_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0/system_lmb_bram_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/1/315795c509a3927a/system_lmb_bram_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0/system_lmb_bram_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0/system_lmb_bram_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/1/315795c509a3927a/system_lmb_bram_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0/system_lmb_bram_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_lmb_bram_0/system_lmb_bram_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_lmb_bram_0, cache-ID = 315795c509a3927a; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_axi_uartlite_0_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry af5b7ce984d28332 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/a/f/af5b7ce984d28332/system_axi_uartlite_0_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/a/f/af5b7ce984d28332/system_axi_uartlite_0_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/a/f/af5b7ce984d28332/system_axi_uartlite_0_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/a/f/af5b7ce984d28332/system_axi_uartlite_0_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/a/f/af5b7ce984d28332/system_axi_uartlite_0_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_axi_uartlite_0_0/system_axi_uartlite_0_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_axi_uartlite_0_0, cache-ID = af5b7ce984d28332; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_microblaze_0_riscv_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 61ac03bf04438a80 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/1/61ac03bf04438a80/system_microblaze_0_riscv_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/1/61ac03bf04438a80/system_microblaze_0_riscv_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/1/61ac03bf04438a80/system_microblaze_0_riscv_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/1/61ac03bf04438a80/system_microblaze_0_riscv_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/1/61ac03bf04438a80/system_microblaze_0_riscv_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_microblaze_0_riscv_0/system_microblaze_0_riscv_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_microblaze_0_riscv_0, cache-ID = 61ac03bf04438a80; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_dlmb_bram_if_cntlr_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry c8b41b053b9aae2f to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/8/c8b41b053b9aae2f/system_dlmb_bram_if_cntlr_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/8/c8b41b053b9aae2f/system_dlmb_bram_if_cntlr_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/8/c8b41b053b9aae2f/system_dlmb_bram_if_cntlr_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/8/c8b41b053b9aae2f/system_dlmb_bram_if_cntlr_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/c/8/c8b41b053b9aae2f/system_dlmb_bram_if_cntlr_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_bram_if_cntlr_0/system_dlmb_bram_if_cntlr_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_dlmb_bram_if_cntlr_0, cache-ID = c8b41b053b9aae2f; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_mdm_1_riscv_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 63d7947a7790aa74 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/3/63d7947a7790aa74/system_mdm_1_riscv_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/3/63d7947a7790aa74/system_mdm_1_riscv_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/3/63d7947a7790aa74/system_mdm_1_riscv_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/3/63d7947a7790aa74/system_mdm_1_riscv_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/6/3/63d7947a7790aa74/system_mdm_1_riscv_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_mdm_1_riscv_0, cache-ID = 63d7947a7790aa74; cache size = 77.481 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_dlmb_v10_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 37d89318efb21f32 to dir: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/7/37d89318efb21f32/system_dlmb_v10_0.dcp to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/7/37d89318efb21f32/system_dlmb_v10_0_sim_netlist.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/7/37d89318efb21f32/system_dlmb_v10_0_sim_netlist.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/7/37d89318efb21f32/system_dlmb_v10_0_stub.v to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/ip/2024.1/3/7/37d89318efb21f32/system_dlmb_v10_0_stub.vhdl to c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/ip/system_dlmb_v10_0/system_dlmb_v10_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_dlmb_v10_0, cache-ID = 37d89318efb21f32; cache size = 77.481 MB.
+config_ip_cache: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2812.891 ; gain = 28.098
+[Wed Jan 22 14:11:25 2025] Launched system_mig_7series_0_0_synth_1, synth_1...
+Run output will be captured here:
+system_mig_7series_0_0_synth_1: C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.runs/system_mig_7series_0_0_synth_1/runme.log
+synth_1: C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.runs/synth_1/runme.log
+[Wed Jan 22 14:11:25 2025] Launched impl_1...
+Run output will be captured here: C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:44 ; elapsed = 00:00:59 . Memory (MB): peak = 2812.891 ; gain = 334.836
+write_hw_platform -fixed -include_bit -force -file C:/Users/Alejandro/Documents/git/genesys2_basic/system_wrapper.xsa
+INFO: [Project 1-1918] Creating Hardware Platform: C:/Users/Alejandro/Documents/git/genesys2_basic/system_wrapper.xsa ...
+WARNING: [Project 1-645] Board images not set in Hardware Platform.
+INFO: [Project 1-1943] The Hardware Platform can be used for Hardware
+INFO: [Project 1-1941] Successfully created Hardware Platform: C:/Users/Alejandro/Documents/git/genesys2_basic/system_wrapper.xsa
+INFO: [Hsi 55-2053] elapsed time for repository (C:/Xilinx/Vivado/2024.1/data/embeddedsw) loading 0 seconds
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2024.1.0
+  **** Build date : Mar  6 2024 at 20:50:54
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2024.1.0
+  ****** Build date   : Mar 09 2024-01:00:37
+    **** Build number : 2024.1.1709942437
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 2970.629 ; gain = 2.684
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/200300BCCB44B
+set_property PROGRAM.FILE {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+current_hw_device [get_hw_devices xc7k325t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-1434] Device xc7k325t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2970.836 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-1434] Device xc7k325t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 22 14:52:06 2025...
