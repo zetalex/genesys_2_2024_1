@@ -1,0 +1,493 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Jan 22 15:39:03 2025
+# Process ID: 23236
+# Current directory: C:/Users/Alejandro/Documents/git/genesys2_basic
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4752 C:\Users\Alejandro\Documents\git\genesys2_basic\genesys2_basic.xpr
+# Log file: C:/Users/Alejandro/Documents/git/genesys2_basic/vivado.log
+# Journal file: C:/Users/Alejandro/Documents/git/genesys2_basic\vivado.jou
+# Running On        :DESKTOP-3VUNQ5R
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :AMD Ryzen 9 5900HX with Radeon Graphics        
+# CPU Frequency     :3294 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :16558 MB
+# Swap memory       :5276 MB
+# Total Virtual     :21834 MB
+# Available Virtual :10864 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+startgroup
+set_property CONFIG.NUM_MI {4} [get_bd_cells microblaze_0_axi_periph]
+endgroup
+connect_bd_net [get_bd_pins microblaze_0_axi_periph/M03_ACLK] [get_bd_pins mig_7series_0/ui_clk]
+connect_bd_net [get_bd_pins microblaze_0_axi_periph/M03_ARESETN] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins microblaze_0_axi_periph/M03_AXI] [get_bd_intf_pins axi_gpio_0/S_AXI]
+connect_bd_net [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins mig_7series_0/ui_clk]
+connect_bd_net [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn]
+save_bd_design
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins axi_gpio_0/GPIO]
+endgroup
+save_bd_design
+startgroup
+set_property CONFIG.C_IS_DUAL {1} [get_bd_cells axi_gpio_0]
+endgroup
+delete_bd_objs [get_bd_intf_nets axi_gpio_0_GPIO] [get_bd_intf_ports GPIO_0]
+save_bd_design
+create_bd_port -dir O -from 4 -to 0 BTNs
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.2 util_ds_buf_0
+endgroup
+delete_bd_objs [get_bd_cells util_ds_buf_0]
+save_bd_design
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
+endgroup
+set_property location {2474 457} [get_bd_ports BTNs]
+set_property CONFIG.DOUT_WIDTH {5} [get_bd_cells xlslice_0]
+save_bd_design
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_i] [get_bd_pins xlslice_0/Din]
+set_property location {2485 448} [get_bd_ports BTNs]
+startgroup
+endgroup
+connect_bd_net [get_bd_ports BTNs] [get_bd_pins xlslice_0/Dout]
+save_bd_design
+create_bd_port -dir O -from 7 -to 0 LEDs
+delete_bd_objs [get_bd_nets xlslice_0_Dout] [get_bd_ports BTNs]
+create_bd_port -dir I -from 4 -to 0 BTNs
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1
+endgroup
+create_bd_port -dir I -from 7 -to 0 SWs
+delete_bd_objs [get_bd_nets Net]
+set_property CONFIG.DOUT_WIDTH {32} [get_bd_cells xlslice_0]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_i] [get_bd_pins xlslice_0/Dout]
+delete_bd_objs [get_bd_nets xlslice_0_Dout]
+set_property location {1 163 -13} [get_bd_cells xlslice_0]
+delete_bd_objs [get_bd_cells xlslice_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0
+endgroup
+set_property location {1 185 57} [get_bd_cells xlconcat_0]
+connect_bd_net [get_bd_ports SWs] [get_bd_pins xlconcat_0/In1]
+connect_bd_net [get_bd_ports BTNs] [get_bd_pins xlconcat_0/In0]
+save_bd_design
+connect_bd_net [get_bd_pins xlconcat_0/dout] [get_bd_pins axi_gpio_0/gpio_io_i]
+save_bd_design
+startgroup
+set_property -dict [list \
+  CONFIG.C_INTERRUPT_PRESENT {1} \
+  CONFIG.C_IS_DUAL {0} \
+] [get_bd_cells axi_gpio_0]
+endgroup
+set_property location {-60 85} [get_bd_ports SWs]
+set_property location {6 2353 527} [get_bd_cells xlslice_1]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins xlslice_1/Din]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.2 util_ds_buf_0
+endgroup
+delete_bd_objs [get_bd_cells util_ds_buf_0]
+delete_bd_objs [get_bd_nets axi_gpio_0_gpio_io_o] [get_bd_cells xlslice_1]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.2 util_ds_buf_0
+endgroup
+set_property -dict [list \
+  CONFIG.C_BUF_TYPE {IOBUFDS} \
+  CONFIG.C_SIZE {32} \
+] [get_bd_cells util_ds_buf_0]
+delete_bd_objs [get_bd_nets xlconcat_0_dout]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_i] [get_bd_pins util_ds_buf_0/IOBUF_IO_O]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins util_ds_buf_0/IOBUF_IO_I]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_t] [get_bd_pins util_ds_buf_0/IOBUF_IO_T]
+delete_bd_objs [get_bd_ports LEDs]
+delete_bd_objs [get_bd_nets SWs_1] [get_bd_nets BTNs_1] [get_bd_cells xlconcat_0]
+delete_bd_objs [get_bd_ports SWs]
+delete_bd_objs [get_bd_ports BTNs]
+save_bd_design
+create_bd_port -dir IO -from 7 -to 0 LEDs
+create_bd_port -dir IO -from 7 -to 0 SWs
+create_bd_port -dir IO -from 5 -to 0 BTNs
+delete_bd_objs [get_bd_ports BTNs]
+create_bd_port -dir IO -from 4 -to 0 BTNs
+set_property location {2768 335} [get_bd_ports SWs]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0
+endgroup
+set_property CONFIG.NUM_PORTS {3} [get_bd_cells xlconcat_0]
+set_property location {7 2671 364} [get_bd_cells xlconcat_0]
+delete_bd_objs [get_bd_cells xlconcat_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_2
+endgroup
+delete_bd_objs [get_bd_cells xlslice_0] [get_bd_cells xlslice_1] [get_bd_cells xlslice_2]
+save_bd_design
+delete_bd_objs [get_bd_ports SWs]
+delete_bd_objs [get_bd_ports LEDs]
+delete_bd_objs [get_bd_ports BTNs]
+startgroup
+make_bd_pins_external  [get_bd_pins util_ds_buf_0/IOBUF_DS_P]
+endgroup
+set_property name GPIOs [get_bd_ports IOBUF_DS_P_0]
+save_bd_design
+regenerate_bd_layout
+generate_target all [get_files  C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd]
+catch { config_ip_cache -export [get_ips -all system_dlmb_v10_0] }
+catch { config_ip_cache -export [get_ips -all system_ilmb_v10_0] }
+catch { config_ip_cache -export [get_ips -all system_dlmb_bram_if_cntlr_0] }
+catch { config_ip_cache -export [get_ips -all system_ilmb_bram_if_cntlr_0] }
+catch { config_ip_cache -export [get_ips -all system_lmb_bram_0] }
+catch { config_ip_cache -export [get_ips -all system_rst_mig_7series_0_100M_0] }
+catch { config_ip_cache -export [get_ips -all system_axi_uartlite_0_0] }
+catch { config_ip_cache -export [get_ips -all system_xbar_0] }
+catch { config_ip_cache -export [get_ips -all system_mdm_1_riscv_0] }
+catch { config_ip_cache -export [get_ips -all system_microblaze_0_riscv_0] }
+catch { config_ip_cache -export [get_ips -all system_axi_intc_0_0] }
+catch { config_ip_cache -export [get_ips -all system_axi_gpio_0_0] }
+catch { config_ip_cache -export [get_ips -all system_util_ds_buf_0_2] }
+catch { config_ip_cache -export [get_ips -all system_auto_us_1] }
+catch { config_ip_cache -export [get_ips -all system_auto_us_2] }
+catch { config_ip_cache -export [get_ips -all system_auto_ds_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_ds_1] }
+catch { config_ip_cache -export [get_ips -all system_auto_pc_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_us_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_ds_2] }
+catch { config_ip_cache -export [get_ips -all system_s00_mmu_0] }
+catch { config_ip_cache -export [get_ips -all system_s01_mmu_0] }
+export_ip_user_files -of_objects [get_files C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd]
+launch_runs system_axi_gpio_0_0_synth_1 system_microblaze_0_riscv_0_synth_1 system_mig_7series_0_0_synth_1 system_s00_mmu_0_synth_1 system_s01_mmu_0_synth_1 system_util_ds_buf_0_2_synth_1 system_xbar_0_synth_1 -jobs 8
+wait_on_run system_axi_gpio_0_0_synth_1
+wait_on_run system_microblaze_0_riscv_0_synth_1
+wait_on_run system_mig_7series_0_0_synth_1
+wait_on_run system_s00_mmu_0_synth_1
+wait_on_run system_s01_mmu_0_synth_1
+wait_on_run system_util_ds_buf_0_2_synth_1
+wait_on_run system_xbar_0_synth_1
+export_simulation -of_objects [get_files C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd] -directory C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.ip_user_files -ipstatic_source_dir C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/compile_simlib/modelsim} {questa=C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/compile_simlib/questa} {riviera=C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/compile_simlib/riviera} {activehdl=C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run system_mig_7series_0_0_synth_1
+reset_run system_xbar_0_synth_1
+reset_run system_microblaze_0_riscv_0_synth_1
+reset_run system_axi_gpio_0_0_synth_1
+reset_run system_util_ds_buf_0_2_synth_1
+reset_run system_s00_mmu_0_synth_1
+reset_run system_s01_mmu_0_synth_1
+assign_bd_address -target_address_space /microblaze_0/Data [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] -force
+assign_bd_address -target_address_space /microblaze_0/Instruction [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] -force
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property LEFT 20 [get_bd_ports /GPIOs]
+save_bd_design
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0
+endgroup
+delete_bd_objs [get_bd_nets axi_uartlite_0_interrupt]
+set_property location {1.5 369 364} [get_bd_cells xlconcat_0]
+connect_bd_net [get_bd_pins axi_uartlite_0/interrupt] [get_bd_pins xlconcat_0/In0]
+connect_bd_net [get_bd_pins axi_gpio_0/ip2intc_irpt] [get_bd_pins xlconcat_0/In1]
+connect_bd_net [get_bd_pins xlconcat_0/dout] [get_bd_pins axi_intc_0/intr]
+regenerate_bd_layout
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
+endgroup
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+set_property location {5 1720 874} [get_bd_cells xlslice_0]
+undo
+undo
+undo
+set_property CONFIG.DOUT_WIDTH {20} [get_bd_cells xlslice_0]
+set_property location {5 1797 898} [get_bd_cells xlslice_0]
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+delete_bd_objs [get_bd_nets axi_gpio_0_gpio_io_t]
+delete_bd_objs [get_bd_nets axi_gpio_0_gpio_io_o]
+delete_bd_objs [get_bd_nets util_ds_buf_0_IOBUF_IO_O]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_i] [get_bd_pins xlslice_2/Din]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_o] [get_bd_pins xlslice_1/Din]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_t] [get_bd_pins xlslice_0/Din]
+startgroup
+set_property CONFIG.C_SIZE {21} [get_bd_cells util_ds_buf_0]
+endgroup
+connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins util_ds_buf_0/IOBUF_IO_T]
+delete_bd_objs [get_bd_nets xlslice_0_Dout] [get_bd_nets axi_gpio_0_gpio_io_t] [get_bd_cells xlslice_0]
+delete_bd_objs [get_bd_nets axi_gpio_0_gpio_io_o] [get_bd_cells xlslice_1]
+delete_bd_objs [get_bd_nets Net1] [get_bd_cells xlslice_2]
+set_property location {5 1849 1044} [get_bd_cells util_ds_buf_0]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_i] [get_bd_pins util_ds_buf_0/IOBUF_IO_T]
+undo
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_i] [get_bd_pins util_ds_buf_0/IOBUF_IO_I]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_t] [get_bd_pins axi_gpio_0/gpio_io_i]
+disconnect_bd_net /Net1 [get_bd_pins axi_gpio_0/gpio_io_t]
+connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_t] [get_bd_pins util_ds_buf_0/IOBUF_IO_T]
+delete_bd_objs [get_bd_nets Net1]
+startgroup
+connect_bd_net [get_bd_pins util_ds_buf_0/IOBUF_IO_O] [get_bd_pins axi_gpio_0/gpio_io_i]
+endgroup
+connect_bd_net [get_bd_pins util_ds_buf_0/IOBUF_IO_I] [get_bd_pins axi_gpio_0/gpio_io_o]
+validate_bd_design
+save_bd_design
+open_hw_manager
+open_bd_design {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd}
+reset_run synth_1
+reset_run system_mig_7series_0_0_synth_1
+reset_run system_util_ds_buf_0_2_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_run impl_1
+reset_rpoject
+reset_project
+close_design
+generate_target all [get_files C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd]
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd]
+launch_runs system_auto_ds_0_synth_1 system_auto_ds_1_synth_1 system_auto_ds_2_synth_1 system_auto_pc_0_synth_1 system_auto_us_0_synth_1 system_auto_us_1_synth_1 system_auto_us_2_synth_1 system_axi_gpio_0_0_synth_1 system_axi_intc_0_0_synth_1 system_axi_uartlite_0_0_synth_1 system_dlmb_bram_if_cntlr_0_synth_1 system_dlmb_v10_0_synth_1 system_ilmb_bram_if_cntlr_0_synth_1 system_ilmb_v10_0_synth_1 system_lmb_bram_0_synth_1 system_mdm_1_riscv_0_synth_1 system_microblaze_0_riscv_0_synth_1 system_mig_7series_0_0_synth_1 system_rst_mig_7series_0_100M_0_synth_1 system_util_ds_buf_0_2_synth_1 system_xbar_0_synth_1 -jobs 8
+wait_on_run system_auto_ds_0_synth_1
+wait_on_run system_auto_ds_1_synth_1
+wait_on_run system_auto_ds_2_synth_1
+wait_on_run system_auto_pc_0_synth_1
+wait_on_run system_auto_us_0_synth_1
+wait_on_run system_auto_us_1_synth_1
+wait_on_run system_auto_us_2_synth_1
+wait_on_run system_axi_gpio_0_0_synth_1
+wait_on_run system_axi_intc_0_0_synth_1
+wait_on_run system_axi_uartlite_0_0_synth_1
+wait_on_run system_dlmb_bram_if_cntlr_0_synth_1
+wait_on_run system_dlmb_v10_0_synth_1
+wait_on_run system_ilmb_bram_if_cntlr_0_synth_1
+wait_on_run system_ilmb_v10_0_synth_1
+wait_on_run system_lmb_bram_0_synth_1
+wait_on_run system_mdm_1_riscv_0_synth_1
+wait_on_run system_microblaze_0_riscv_0_synth_1
+wait_on_run system_mig_7series_0_0_synth_1
+wait_on_run system_rst_mig_7series_0_100M_0_synth_1
+wait_on_run system_util_ds_buf_0_2_synth_1
+wait_on_run system_xbar_0_synth_1
+wait_on_run system_auto_ds_0_synth_1 system_auto_ds_1_synth_1 system_auto_ds_2_synth_1 system_auto_pc_0_synth_1 system_auto_us_0_synth_1 system_auto_us_1_synth_1 system_auto_us_2_synth_1 system_axi_gpio_0_0_synth_1 system_axi_intc_0_0_synth_1 system_axi_uartlite_0_0_synth_1 system_dlmb_bram_if_cntlr_0_synth_1 system_dlmb_v10_0_synth_1 system_ilmb_bram_if_cntlr_0_synth_1 system_ilmb_v10_0_synth_1 system_lmb_bram_0_synth_1 system_mdm_1_riscv_0_synth_1 system_microblaze_0_riscv_0_synth_1 system_mig_7series_0_0_synth_1 system_rst_mig_7series_0_100M_0_synth_1 system_util_ds_buf_0_2_synth_1 system_xbar_0_synth_1
+reset_run system_mig_7series_0_0_synth_1
+reset_run system_xbar_0_synth_1
+reset_run system_microblaze_0_riscv_0_synth_1
+reset_run system_axi_gpio_0_0_synth_1
+reset_run system_util_ds_buf_0_2_synth_1
+reset_run system_dlmb_bram_if_cntlr_0_synth_1
+reset_run system_ilmb_bram_if_cntlr_0_synth_1
+reset_run system_axi_intc_0_0_synth_1
+reset_run system_dlmb_v10_0_synth_1
+reset_run system_ilmb_v10_0_synth_1
+reset_run system_lmb_bram_0_synth_1
+reset_run system_rst_mig_7series_0_100M_0_synth_1
+reset_run system_axi_uartlite_0_0_synth_1
+reset_run system_mdm_1_riscv_0_synth_1
+reset_run system_auto_us_1_synth_1
+reset_run system_auto_us_2_synth_1
+reset_run system_auto_ds_0_synth_1
+reset_run system_auto_ds_1_synth_1
+reset_run system_auto_pc_0_synth_1
+reset_run system_auto_us_0_synth_1
+reset_run system_auto_ds_2_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_run impl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list {GPIOs[19]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {GPIOs[17]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {GPIOs[15]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {GPIOs[13]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[12]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[9]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[8]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[5]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[1]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[0]}]]
+save_constraints
+place_ports {GPIOs[8]} AA17
+place_ports {GPIOs[8]} AG27
+place_ports {GPIOs[0]} AA17
+place_ports {GPIOs[0]} AJ26
+place_ports {GPIOs[1]} AA17
+place_ports {GPIOs[1]} AF26
+place_ports {GPIOs[5]} AA17
+place_ports {GPIOs[5]} AH26
+place_ports {GPIOs[9]} AA15
+place_ports {GPIOs[9]} AJ27
+place_ports {GPIOs[12]} AA17
+place_ports {GPIOs[12]} AC26
+place_ports {GPIOs[13]} A20
+undo
+undo
+undo
+undo
+place_ports {GPIOs[13]} A20
+close_design
+open_run impl_1
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[0]}]]
+set_property is_loc_fixed true [get_ports [list  {GPIOs[0]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[1]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[5]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[8]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[9]}]]
+set_property IOSTANDARD LVCMOS12 [get_ports [list {GPIOs[12]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {GPIOs[13]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {GPIOs[15]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {GPIOs[17]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {GPIOs[19]}]]
+set_property is_loc_fixed true [get_ports [list  {GPIOs[19]}]]
+set_property is_loc_fixed true [get_ports [list  {GPIOs[17]}]]
+set_property is_loc_fixed true [get_ports [list  {GPIOs[13]}]]
+set_property is_loc_fixed true [get_ports [list  {GPIOs[12]}]]
+set_property is_loc_fixed true [get_ports [list  {GPIOs[15]}]]
+set_property is_loc_fixed true [get_ports [list  {GPIOs[9]}]]
+set_property is_loc_fixed true [get_ports [list  {GPIOs[8]}]]
+set_property is_loc_fixed true [get_ports [list  {GPIOs[5]}]]
+set_property is_loc_fixed true [get_ports [list  {GPIOs[1]}]]
+save_constraints -force
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+close_design
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run impl_1
+delete_bd_objs [get_bd_nets Net]
+delete_bd_objs [get_bd_nets util_ds_buf_0_IOBUF_IO_O]
+delete_bd_objs [get_bd_nets axi_gpio_0_gpio_io_o] [get_bd_nets axi_gpio_0_gpio_io_t] [get_bd_cells util_ds_buf_0]
+delete_bd_objs [get_bd_ports GPIOs]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins axi_gpio_0/GPIO]
+endgroup
+set_property name GPIOs [get_bd_intf_ports GPIO_0]
+save_bd_design
+make_wrapper -files [get_files C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd] -top
+import_files -force -norecurse c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/hdl/system_wrapper.v
+startgroup
+set_property CONFIG.C_GPIO_WIDTH {21} [get_bd_cells axi_gpio_0]
+endgroup
+save_bd_design
+make_wrapper -files [get_files C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd] -top
+add_files -norecurse c:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.gen/sources_1/bd/system/hdl/system_wrapper.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/imports/hdl/system_wrapper.v] -no_script -reset -force -quiet
+remove_files  C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/imports/hdl/system_wrapper.v
+reset_run system_mig_7series_0_0_synth_1
+reset_run system_axi_gpio_0_0_synth_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/Alejandro/Documents/git/genesys2_basic/system_wrapper.xsa
+connect_hw_server -allow_non_jtag
+open_hw_target {localhost:3121/xilinx_tcf/Digilent/200300BCCB44B}
+set_property PROGRAM.FILE {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+current_hw_device [get_hw_devices xc7k325t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+open_bd_design {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd}
+open_run synth_1 -name synth_1
+open_bd_design {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd}
+open_bd_design {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd}
+delete_bd_objs [get_bd_intf_nets axi_gpio_0_GPIO] [get_bd_intf_ports GPIOs]
+startgroup
+set_property -dict [list \
+  CONFIG.C_ALL_INPUTS {1} \
+  CONFIG.C_ALL_OUTPUTS_2 {1} \
+  CONFIG.C_GPIO2_WIDTH {8} \
+  CONFIG.C_GPIO_WIDTH {13} \
+  CONFIG.C_IS_DUAL {1} \
+] [get_bd_cells axi_gpio_0]
+endgroup
+create_bd_port -dir I -from 7 -to 0 SW
+create_bd_port -dir I -from 0 -to 4 BTN
+create_bd_port -dir O -from 7 -to 0 LED
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1
+endgroup
+set_property location {1 123 730} [get_bd_cells xlconcat_1]
+connect_bd_net [get_bd_ports SW] [get_bd_pins xlconcat_1/In0]
+connect_bd_net [get_bd_ports BTN] [get_bd_pins xlconcat_1/In1]
+connect_bd_net [get_bd_pins xlconcat_1/dout] [get_bd_pins axi_gpio_0/gpio_io_i]
+connect_bd_net [get_bd_ports LED] [get_bd_pins axi_gpio_0/gpio2_io_o]
+regenerate_bd_layout
+save_bd_design
+make_wrapper -files [get_files C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd] -top
+open_bd_design {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd}
+generate_target all [get_files  C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd]
+catch { config_ip_cache -export [get_ips -all system_axi_gpio_0_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_us_1] }
+catch { config_ip_cache -export [get_ips -all system_auto_us_2] }
+catch { config_ip_cache -export [get_ips -all system_auto_ds_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_ds_1] }
+catch { config_ip_cache -export [get_ips -all system_auto_pc_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_us_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_ds_2] }
+export_ip_user_files -of_objects [get_files C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd]
+launch_runs system_axi_gpio_0_0_synth_1 system_mig_7series_0_0_synth_1 -jobs 8
+wait_on_run system_axi_gpio_0_0_synth_1
+wait_on_run system_mig_7series_0_0_synth_1
+export_simulation -of_objects [get_files C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.srcs/sources_1/bd/system/system.bd] -directory C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.ip_user_files -ipstatic_source_dir C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/compile_simlib/modelsim} {questa=C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/compile_simlib/questa} {riviera=C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/compile_simlib/riviera} {activehdl=C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/Alejandro/Documents/git/genesys2_basic/system_wrapper.xsa
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {C:/Users/Alejandro/Documents/git/genesys2_basic/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+reset_project

@@ -1,0 +1,35 @@
+18:17:20 INFO  : updated workspace path: 
+18:17:20 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && python C:\Xilinx\Vitis\2024.1\data\embeddedsw\scripts\pyesw\\repo.py -st  C:\Xilinx\Vitis\2024.1\data\embeddedsw && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+18:17:22 INFO  : Successfully created repository data at C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos3455118292073475504
+18:17:22 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && python C:\Xilinx\Vitis\2024.1\data\embeddedsw\scripts\pyesw\\get_template_data.py -d C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos3708045262747524580 -r C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos3455118292073475504\.repo.yaml && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+18:17:23 INFO  : Embedded Template List generated successfully
+18:20:05 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && python C:\Xilinx\Vitis\2024.1\data\embeddedsw\scripts\pyesw\\repo.py -st  C:\Xilinx\Vitis\2024.1\data\embeddedsw && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+06:59:41 INFO  : updated workspace path: 
+06:59:41 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && python C:\Xilinx\Vitis\2024.1\data\embeddedsw\scripts\pyesw\\repo.py -st  C:\Xilinx\Vitis\2024.1\data\embeddedsw && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+06:59:45 INFO  : Successfully created repository data at C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos2569190483479467526
+06:59:45 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && python C:\Xilinx\Vitis\2024.1\data\embeddedsw\scripts\pyesw\\get_template_data.py -d C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos15047585828123412126 -r C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos2569190483479467526\.repo.yaml && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+06:59:45 INFO  : Embedded Template List generated successfully
+07:13:44 INFO  : connection terminated
+07:13:44 INFO  : connection terminated
+07:13:44 INFO  : scheduling shutdown timer for 2 seconds ...
+07:13:46 INFO  : Terminating Vitis C++ Server
+07:13:46 INFO  : warning: stdin closed
+07:13:46 INFO  : info: Exiting server
+07:13:47 INFO  : Vitis C++ Server terminated
+07:15:02 INFO  : updated workspace path: 
+07:15:03 INFO  : Successfully created repository data at C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos6921181874655603650
+07:15:03 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && python C:\Xilinx\Vitis\2024.1\data\embeddedsw\scripts\pyesw\\get_template_data.py -d C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos8168246173645341517 -r C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos6921181874655603650\.repo.yaml && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+07:15:04 INFO  : Embedded Template List generated successfully
+07:15:04 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && python C:\Xilinx\Vitis\2024.1\data\embeddedsw\scripts\pyesw\\repo.py -st  C:\Xilinx\Vitis\2024.1\data\embeddedsw && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+07:15:05 INFO  : Successfully created repository data at C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos7479484125194617033
+07:15:05 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && python C:\Xilinx\Vitis\2024.1\data\embeddedsw\scripts\pyesw\\get_template_data.py -d C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos12806297970897331262 -r C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos7479484125194617033\.repo.yaml && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+07:15:06 INFO  : Embedded Template List generated successfully
+07:19:24 INFO  : Found no platform with name 'system_wrapper' in install repositories
+07:19:28 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && xsct.bat C:\Xilinx\Vitis\2024.1\vitisng-server\scripts\platformutil.tcl C:\amd_work\genesys2\proj5\genesys_2_2024_1-main\system_wrapper.xsa C:\Users\marcos\AppData\Local\Temp\rigel_lopper_temp_platformmarcos18276471035112585437\system_wrapper\hw\sdt && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+07:19:32 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (C:/Xilinx/Vitis/2024.1/data/embeddedsw) loading 0 seconds
+07:19:32 INFO  : SDT generated successfully
+07:19:32 INFO  : Lopper command for cpu List generation: lopper -O C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos10720085474386730034 -f -i C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Lib\site-packages\lopper\lops\lop-cpulist.dts C:\Users\marcos\AppData\Local\Temp\rigel_lopper_temp_platformmarcos18276471035112585437\system_wrapper\hw\sdt\system-top.dts
+07:19:32 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && lopper -O C:\Users\marcos\AppData\Local\Temp\rigel_lopper_marcos10720085474386730034 -f -i C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Lib\site-packages\lopper\lops\lop-cpulist.dts C:\Users\marcos\AppData\Local\Temp\rigel_lopper_temp_platformmarcos18276471035112585437\system_wrapper\hw\sdt\system-top.dts && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+07:19:34 INFO  : microblaze_0
+07:19:34 INFO  : CPU List generated successfully
+07:20:04 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && python C:\Xilinx\Vitis\2024.1\data\embeddedsw\scripts\pyesw\\repo.py -st  C:\Xilinx\Vitis\2024.1\data\embeddedsw && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat

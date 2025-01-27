@@ -28,6 +28,7 @@ Remember to generate the block design afterwards using the *Generate Block Desig
 The elements in the block diagram are configured with double click as follows:
 - Microblaze V, click on Advanced:
     - Disable all instruction, data cache and disecrete ports.
+    - Enable Missaligned Exceptions and Illegal Instructions Exceptions in BASIC Mode at a minimum.
     - Make sure that in Debug tab, the Debug Module Interface is enabled
     - In Buses, enable both Local Memory Bus Interfaces (Data and Instruction) and both AXI Interfaces (Data and Instruction)
 - Local memory: Use the Block automation from Vivado to get the correct core
@@ -49,16 +50,22 @@ The elements in the block diagram are configured with double click as follows:
     - Stop bits:1
     - Parity: None
 
-- AXI GPIO:
+- AXI GPIO 0:
     - Use Dual Channel: ON
-    - Channel 1: Tick "All Inputs"
-    - Channel 2: Tick "All Outputs"
+    - Channel 1: Tick "All Inputs". Width 8 bits
+    - Channel 2: Tick "All Outputs". Width 8 bits
+
+- AXI GPIO 1:
+    - Use Dual Channel: OFF
+    - Channel 1: Tick "All Inputs". Width 5 bits
+
 - AXI Interconnect:
     - Number of Slave Interfaces: 2
     - Number of Master Interfaces: 3
 
 - AXI Interrupt Controller
-    - Use Fast Logic: ON
+    - Use Fast Logic: OFF
+    - Leave all the options in Auto
 
 Also, go in Vivado to Window > Address Editor and ensure that you have exactly what is displayed in the below image:
 <img src="img/AddressEditor.png">
@@ -72,3 +79,10 @@ The following inputs and outputs are currently present in the design:
 - reset: R19 pin. Low level reset asserted by a push button in the Genesys 2 board.
 - ddr3_sdram: this ping assignment is automatic after configuring and validating MIG 7 IP.
 - usb_uart: uart_txd is pin Y23 and uart_rxd is pin Y20. They go to the microUSB labelled as UART in the Genesys 2 PCB.
+
+# Aspects to take into account
+- The maximum clock speed that the Microblaze V can use is near 100 MHz. 200 MHz makes some things not working, like the data and instruction cache or some peripherals like the UART Lite, which has a max clock frequency in its datasheet of 200MHz for Kintex 7 -2 speed grade. This is borderline best case scenario
+- When processing interruptions from the AXI interruption controller, it seems there is a missaligned access in memory (the software is trying to read a memory position without using a Store Word instruction, more like a byte access). This means that Missaligned Exceptions need to be enabled in the Microblaze V.
+- For debugging, use -O0 and -g3 options un UserConfig.cmake
+- AssertVoid() functions in Interruption GPIO driver don't seem to work, they just hang the CPU. Maybe they no longer do with Missalignment exceptions. 
+- The functions within the drivers are built together with the platform project, not the application project. So, to modify the flags there, you need to use the Makefiles in the corresponding folders of the libraries, the Cmake in the application folder will not work.
