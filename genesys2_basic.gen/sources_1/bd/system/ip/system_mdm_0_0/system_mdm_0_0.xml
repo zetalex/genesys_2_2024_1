@@ -2,7 +2,7 @@
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>xilinx.com</spirit:vendor>
   <spirit:library>customized_ip</spirit:library>
-  <spirit:name>system_mdm_1_riscv_0</spirit:name>
+  <spirit:name>system_mdm_0_0</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -29372,15 +29372,392 @@
         <spirit:displayName>Reg</spirit:displayName>
         <spirit:description>Register Block</spirit:description>
         <spirit:baseAddress spirit:format="long">0</spirit:baseAddress>
-        <spirit:range spirit:format="long" spirit:minimum="4096" spirit:maximum="4096" spirit:rangeType="long">4096</spirit:range>
+        <spirit:range spirit:format="long" spirit:resolve="dependent" spirit:dependency="4096 + 61440 * number(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) > 0)" spirit:minimum="4096" spirit:maximum="65536" spirit:rangeType="long">4096</spirit:range>
         <spirit:width spirit:format="long">32</spirit:width>
         <spirit:usage>register</spirit:usage>
         <spirit:access>read-write</spirit:access>
         <spirit:register>
-          <spirit:name>DATA0</spirit:name>
-          <spirit:displayName>Abstract Data 0 Register</spirit:displayName>
-          <spirit:description>Abstract Data 0 Register</spirit:description>
+          <spirit:name>UART_RX_FIFO</spirit:name>
+          <spirit:displayName>JTAG UART Receive Data</spirit:displayName>
+          <spirit:description>JTAG UART Receive Data</spirit:description>
+          <spirit:addressOffset>0x0</spirit:addressOffset>
+          <spirit:size spirit:format="long">8</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>UART_RX</spirit:name>
+            <spirit:displayName>UART_RX</spirit:displayName>
+            <spirit:description>UART Receive Data.</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">8</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART_RX_FIFO" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>UART_TX_FIFO</spirit:name>
+          <spirit:displayName>JTAG UART Transmit Data</spirit:displayName>
+          <spirit:description>JTAG UART Transmit Data</spirit:description>
+          <spirit:addressOffset>0x4</spirit:addressOffset>
+          <spirit:size spirit:format="long">8</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>UART_TX</spirit:name>
+            <spirit:displayName>UART_TX</spirit:displayName>
+            <spirit:description>UART Transmit Data.</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">8</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART_TX_FIFO" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>UART_STATUS</spirit:name>
+          <spirit:displayName>JTAG UART Status Register</spirit:displayName>
+          <spirit:description>JTAG UART Status Register</spirit:description>
+          <spirit:addressOffset>0x8</spirit:addressOffset>
+          <spirit:size spirit:format="long">5</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>RX_FIFO_Valid_Data</spirit:name>
+            <spirit:displayName>RX FIFO Valid Data</spirit:displayName>
+            <spirit:description>Indicates if the receive FIFO has valid data:
+  0 - Receive FIFO is empty.
+  1 - Receive FIFO has valid data.
+</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>RX_FIFO_Full</spirit:name>
+            <spirit:displayName>RX FIFO Full</spirit:displayName>
+            <spirit:description>Indicates if the receive FIFO is full:
+  0 - Receive FIFO is not full.
+  1 - Receive FIFO is full.
+</spirit:description>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>TX_FIFO_Empty</spirit:name>
+            <spirit:displayName>TX FIFO Empty</spirit:displayName>
+            <spirit:description>Indicates if the transmit FIFO is empty:
+  0 - Transmit FIFO is not empty.
+  1 - Transmit FIFO is empty.
+</spirit:description>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>TX_FIFO_Full</spirit:name>
+            <spirit:displayName>TX FIFO Full</spirit:displayName>
+            <spirit:description>Indicates if the transmit FIFO is full:
+  0 - Transmit FIFO is not full.
+  1 - Transmit FIFO is full.
+</spirit:description>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>Interrupt_Enabled</spirit:name>
+            <spirit:displayName>Interrupt Enabled</spirit:displayName>
+            <spirit:description>Indicates that interrupt is enabled:
+  0 - Interrupt is disabled.
+  1 - Interrupt is enabled.
+</spirit:description>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART_STATUS" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>UART_CTRL</spirit:name>
+          <spirit:displayName>JTAG UART Control Register</spirit:displayName>
+          <spirit:description>JTAG UART Control Register</spirit:description>
+          <spirit:addressOffset>0xC</spirit:addressOffset>
+          <spirit:size spirit:format="long">5</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>Reset_TX_FIFO</spirit:name>
+            <spirit:displayName>Reset TX FIFO</spirit:displayName>
+            <spirit:description>Reset/clear the transmit FIFO:
+  0 - Do nothing.
+  1 - Clear the transmit FIFO.
+</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>Reset_RX_FIFO</spirit:name>
+            <spirit:displayName>Reset RX FIFO</spirit:displayName>
+            <spirit:description>Reset/clear the receive FIFO:
+  0 - Do nothing.
+  1 - Clear the receive FIFO.
+</spirit:description>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>Clear_EXT_BRK</spirit:name>
+            <spirit:displayName>Clear EXT_BRK</spirit:displayName>
+            <spirit:description>Clear the EXT_BRK signal set by JTAG:
+  0 - Do nothing.
+  1 - Clear the signal.
+</spirit:description>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>Interrupt_Enabled</spirit:name>
+            <spirit:displayName>Interrupt Enabled</spirit:displayName>
+            <spirit:description>Indicates interrupt for the MDM JTAG UART:
+  0 - Disable interrupt interrupt.
+  1 - Enable interrupt signal.
+</spirit:description>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART_CTRL" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>DBG_STATUS</spirit:name>
+          <spirit:displayName>Debug Register Access Status Register</spirit:displayName>
+          <spirit:description>Debug Register Access Status Register</spirit:description>
           <spirit:addressOffset>0x10</spirit:addressOffset>
+          <spirit:size spirit:format="long">1</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>LOCK</spirit:name>
+            <spirit:displayName>Access Lock</spirit:displayName>
+            <spirit:description>Indicates the access lock status:
+  0 - The lock is not acquired.
+  1 - The lock has been acquired by the JTAG interface.
+</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.DBG_STATUS" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>DBG_CTRL</spirit:name>
+          <spirit:displayName>Debug Register Access Control Register</spirit:displayName>
+          <spirit:description>Debug Register Access Control Register</spirit:description>
+          <spirit:addressOffset>0x10</spirit:addressOffset>
+          <spirit:size spirit:format="long">20</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>Bit_Size</spirit:name>
+            <spirit:displayName>Bit Size</spirit:displayName>
+            <spirit:description>Number of bits in the accessed debug register - 1</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">9</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>MDM_Command</spirit:name>
+            <spirit:displayName>MDM Command</spirit:displayName>
+            <spirit:description>MDM command.</spirit:description>
+            <spirit:bitOffset>9</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">8</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>Access_MDM</spirit:name>
+            <spirit:displayName>Access MDM</spirit:displayName>
+            <spirit:description>Access MDM or MicroBlaze Debug register:
+  0 - MicroBlaze debug register access.
+  1 - MDM debug register access.
+</spirit:description>
+            <spirit:bitOffset>17</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>Access_Lock_Type</spirit:name>
+            <spirit:displayName>Access Lock Type</spirit:displayName>
+            <spirit:description>Access lock type write:
+  0 - Release access lock to abort atomic sequence.
+  1 - Lock before first access and unlock after last.
+  2 - Lock before first access, otherwise keep lock.
+  3 - Force lock acquisition, even if aquired by JTAG.
+</spirit:description>
+            <spirit:bitOffset>18</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">2</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.DBG_CTRL" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>DBG_DATA</spirit:name>
+          <spirit:displayName>Debug Register Access Data Register</spirit:displayName>
+          <spirit:description>Debug Register Access Data Register</spirit:description>
+          <spirit:addressOffset>0x14</spirit:addressOffset>
           <spirit:size spirit:format="long">32</spirit:size>
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-write</spirit:access>
@@ -29388,9 +29765,9 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>DATA0</spirit:name>
-            <spirit:displayName>Data</spirit:displayName>
-            <spirit:description>Basic read/write register that may be read or changed by abstract commands</spirit:description>
+            <spirit:name>DBG_DATA</spirit:name>
+            <spirit:displayName>DBG Data</spirit:displayName>
+            <spirit:description>Read or write debug register data indicated by DBG_CTRL.</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
             <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
             <spirit:volatile>true</spirit:volatile>
@@ -29405,168 +29782,28 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.DATA0" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.DBG_DATA" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>DMCONTROL</spirit:name>
-          <spirit:displayName>Debug Module Control Register</spirit:displayName>
-          <spirit:description>Debug Module Control Register</spirit:description>
-          <spirit:addressOffset>0x40</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:name>DBG_LOCK</spirit:name>
+          <spirit:displayName>Debug Register Access Locking Register</spirit:displayName>
+          <spirit:description>Debug Register Access Locking Register</spirit:description>
+          <spirit:addressOffset>0x18</spirit:addressOffset>
+          <spirit:size spirit:format="long">16</spirit:size>
           <spirit:volatile>true</spirit:volatile>
-          <spirit:access>read-write</spirit:access>
+          <spirit:access>write-only</spirit:access>
           <spirit:reset>
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>DMACTIVE</spirit:name>
-            <spirit:displayName>dmactive</spirit:displayName>
-            <spirit:description>Reset signal for the Debug Module itself</spirit:description>
+            <spirit:name>DBG_LOCK</spirit:name>
+            <spirit:displayName>DBG Lock</spirit:displayName>
+            <spirit:description>Unlock access to registers DBG_CTLR and DBG_DATA when writing 0xEBAB.</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>NDMRESET</spirit:name>
-            <spirit:displayName>ndmreset</spirit:displayName>
-            <spirit:description>Controls the reset signal from the DM to the rest of the system</spirit:description>
-            <spirit:bitOffset>1</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>CLRRESETHALTREQ</spirit:name>
-            <spirit:displayName>clrresethaltreq</spirit:displayName>
-            <spirit:description>Clears halt-on-reset request bit</spirit:description>
-            <spirit:bitOffset>2</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>write-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SETRESETHALTREQ</spirit:name>
-            <spirit:displayName>setresethaltreq</spirit:displayName>
-            <spirit:description>Writes the halt-on-reset request bit</spirit:description>
-            <spirit:bitOffset>3</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>write-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>HARTSELHI</spirit:name>
-            <spirit:displayName>hartselhi</spirit:displayName>
-            <spirit:description>High 10 bits of the index of the hart to select</spirit:description>
-            <spirit:bitOffset>6</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">10</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>HARTSELLO</spirit:name>
-            <spirit:displayName>hartsello</spirit:displayName>
-            <spirit:description>Low 10 bits of the index of the hart to select</spirit:description>
-            <spirit:bitOffset>16</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">10</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>HASEL</spirit:name>
-            <spirit:displayName>hasel</spirit:displayName>
-            <spirit:description>Selects the definition of currently selected harts</spirit:description>
-            <spirit:bitOffset>26</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ACKHAVERESET</spirit:name>
-            <spirit:displayName>ackhavereset</spirit:displayName>
-            <spirit:description>Clears havereset for any selected harts</spirit:description>
-            <spirit:bitOffset>28</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>write-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>HARTRESET</spirit:name>
-            <spirit:displayName>hartreset</spirit:displayName>
-            <spirit:description>Writes the reset bit for all the currently selected harts</spirit:description>
-            <spirit:bitOffset>29</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>RESUMEREQ</spirit:name>
-            <spirit:displayName>resumereq</spirit:displayName>
-            <spirit:description>Writing 1 causes the currently selected harts to resume once</spirit:description>
-            <spirit:bitOffset>30</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>write-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>HALTREQ</spirit:name>
-            <spirit:displayName>haltreq</spirit:displayName>
-            <spirit:description>Writing 0 clears the halt request bit for all currently selected harts</spirit:description>
-            <spirit:bitOffset>31</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:bitWidth spirit:format="long">16</spirit:bitWidth>
             <spirit:volatile>true</spirit:volatile>
             <spirit:access>write-only</spirit:access>
             <spirit:writeValueConstraint>
@@ -29578,417 +29815,27 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.DMCONTROL" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.DBG_LOCK" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>DMSTATUS</spirit:name>
-          <spirit:displayName>Debug Module Status Register</spirit:displayName>
-          <spirit:description>Debug Module Status Register</spirit:description>
-          <spirit:addressOffset>0x44</spirit:addressOffset>
-          <spirit:size spirit:format="long">23</spirit:size>
-          <spirit:volatile>true</spirit:volatile>
-          <spirit:access>read-only</spirit:access>
-          <spirit:reset>
-            <spirit:value spirit:format="long">0x00400C82</spirit:value>
-          </spirit:reset>
-          <spirit:field>
-            <spirit:name>VERSION</spirit:name>
-            <spirit:displayName>version</spirit:displayName>
-            <spirit:description>There is a Debug Module and it conforms to version 0.13</spirit:description>
-            <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">4</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>CONFSTRPTRVALID</spirit:name>
-            <spirit:displayName>confstrptrvalid</spirit:displayName>
-            <spirit:description>confstrptr0-3 hold information not relevant to the configuration string</spirit:description>
-            <spirit:bitOffset>4</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>HASRESETHALTREQ</spirit:name>
-            <spirit:displayName>hasresethaltreq</spirit:displayName>
-            <spirit:description>If this Debug Module supports halt-on-reset functionality</spirit:description>
-            <spirit:bitOffset>5</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>AUTHBUSY</spirit:name>
-            <spirit:displayName>authbusy</spirit:displayName>
-            <spirit:description>The authentication module is busy</spirit:description>
-            <spirit:bitOffset>6</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>AUTHENTICATED</spirit:name>
-            <spirit:displayName>authenticated</spirit:displayName>
-            <spirit:description>The authentication check has passed</spirit:description>
-            <spirit:bitOffset>7</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ANYHALTED</spirit:name>
-            <spirit:displayName>anyhalted</spirit:displayName>
-            <spirit:description>Any currently selected hart is halted</spirit:description>
-            <spirit:bitOffset>8</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ALLHALTED</spirit:name>
-            <spirit:displayName>allhalted</spirit:displayName>
-            <spirit:description>All currently selected harts are halted</spirit:description>
-            <spirit:bitOffset>9</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ANYRUNNING</spirit:name>
-            <spirit:displayName>anyrunning</spirit:displayName>
-            <spirit:description>Any currently selected hart is running</spirit:description>
-            <spirit:bitOffset>10</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ALLRUNNING</spirit:name>
-            <spirit:displayName>allrunning</spirit:displayName>
-            <spirit:description>All currently selected harts are running</spirit:description>
-            <spirit:bitOffset>11</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ANYUNAVAIL</spirit:name>
-            <spirit:displayName>anyunavail</spirit:displayName>
-            <spirit:description>Any currently selected hart is unavailable</spirit:description>
-            <spirit:bitOffset>12</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ALLUNAVAIL</spirit:name>
-            <spirit:displayName>allunavail</spirit:displayName>
-            <spirit:description>All currently selected harts are unavailable</spirit:description>
-            <spirit:bitOffset>13</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ANYNONEXISTENT</spirit:name>
-            <spirit:displayName>anynonexistent</spirit:displayName>
-            <spirit:description>Any currently selected hart does not exist in this platform</spirit:description>
-            <spirit:bitOffset>14</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ALLNONEXISTENT</spirit:name>
-            <spirit:displayName>allnonexistent</spirit:displayName>
-            <spirit:description>All currently selected harts do not exist in this platform</spirit:description>
-            <spirit:bitOffset>15</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ANYRESUMEACK</spirit:name>
-            <spirit:displayName>anyresumeack</spirit:displayName>
-            <spirit:description>Any currently selected hart has acknowledged its last resume request</spirit:description>
-            <spirit:bitOffset>16</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ALLRESUMEACK</spirit:name>
-            <spirit:displayName>allresumeack</spirit:displayName>
-            <spirit:description>All currently selected harts have acknowledged their last resume request</spirit:description>
-            <spirit:bitOffset>17</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ANYHAVERESET</spirit:name>
-            <spirit:displayName>anyhavereset</spirit:displayName>
-            <spirit:description>At least one currently selected hart has been reset</spirit:description>
-            <spirit:bitOffset>18</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>ALLHAVERESET</spirit:name>
-            <spirit:displayName>allhavereset</spirit:displayName>
-            <spirit:description>All currently selected harts have been reset</spirit:description>
-            <spirit:bitOffset>19</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>IMPEBREAK</spirit:name>
-            <spirit:displayName>impebreak</spirit:displayName>
-            <spirit:description>There is an implicit ebreak immediately after the Program Buffer</spirit:description>
-            <spirit:bitOffset>22</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:vendorExtensions>
-            <xilinx:registerInfo>
-              <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.DMSTATUS" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
-              </xilinx:enablement>
-            </xilinx:registerInfo>
-          </spirit:vendorExtensions>
-        </spirit:register>
-        <spirit:register>
-          <spirit:name>HAWINDOW</spirit:name>
-          <spirit:displayName>Hart Array Window Register</spirit:displayName>
-          <spirit:description>Hart Array Window Register</spirit:description>
-          <spirit:addressOffset>0x54</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
-          <spirit:volatile>true</spirit:volatile>
-          <spirit:access>read-write</spirit:access>
-          <spirit:reset>
-            <spirit:value spirit:format="long">0x1</spirit:value>
-          </spirit:reset>
-          <spirit:field>
-            <spirit:name>MASKDATA</spirit:name>
-            <spirit:displayName>maskdata</spirit:displayName>
-            <spirit:description>Provides access to a 32-bit portion of the hart array mask register</spirit:description>
-            <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:vendorExtensions>
-            <xilinx:registerInfo>
-              <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.HAWINDOW" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
-              </xilinx:enablement>
-            </xilinx:registerInfo>
-          </spirit:vendorExtensions>
-        </spirit:register>
-        <spirit:register>
-          <spirit:name>ABSTRACTCS</spirit:name>
-          <spirit:displayName>Abstract Control and Status Register</spirit:displayName>
-          <spirit:description>Abstract Control and Status Register</spirit:description>
-          <spirit:addressOffset>0x58</spirit:addressOffset>
-          <spirit:size spirit:format="long">29</spirit:size>
-          <spirit:volatile>true</spirit:volatile>
-          <spirit:access>read-write</spirit:access>
-          <spirit:reset>
-            <spirit:value spirit:format="long">0x01000001</spirit:value>
-          </spirit:reset>
-          <spirit:field>
-            <spirit:name>DATACOUNT</spirit:name>
-            <spirit:displayName>datacount</spirit:displayName>
-            <spirit:description>Number of data registers that are implemented</spirit:description>
-            <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">4</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>CMDERR</spirit:name>
-            <spirit:displayName>cmderr</spirit:displayName>
-            <spirit:description>Gets set if an abstract command fails</spirit:description>
-            <spirit:bitOffset>8</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">3</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>BUSY</spirit:name>
-            <spirit:displayName>busy</spirit:displayName>
-            <spirit:description>An abstract command is currenly being executed</spirit:description>
-            <spirit:bitOffset>12</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>PROGBUFSIZE</spirit:name>
-            <spirit:displayName>progbufsize</spirit:displayName>
-            <spirit:description>Size of the program buffer</spirit:description>
-            <spirit:bitOffset>24</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">5</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:vendorExtensions>
-            <xilinx:registerInfo>
-              <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.ABSTRACTCS" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
-              </xilinx:enablement>
-            </xilinx:registerInfo>
-          </spirit:vendorExtensions>
-        </spirit:register>
-        <spirit:register>
-          <spirit:name>COMMAND</spirit:name>
-          <spirit:displayName>Abstract Command Register</spirit:displayName>
-          <spirit:description>Abstract Command Register</spirit:description>
-          <spirit:addressOffset>0x5C</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:name>PCCTRLR</spirit:name>
+          <spirit:displayName>Debug Register Performance Counter Control Register</spirit:displayName>
+          <spirit:description>Debug Register Performance Counter Control Register</spirit:description>
+          <spirit:addressOffset>0x5440</spirit:addressOffset>
+          <spirit:size spirit:format="long">8</spirit:size>
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
           <spirit:field>
-            <spirit:name>CONTROL</spirit:name>
-            <spirit:displayName>control</spirit:displayName>
-            <spirit:description>Interpreted in a command-specific manner</spirit:description>
+            <spirit:name>Event</spirit:name>
+            <spirit:displayName>Event</spirit:displayName>
+            <spirit:description>Performance counter event</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">24</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>write-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>CMDTYPE</spirit:name>
-            <spirit:displayName>cmdtype</spirit:displayName>
-            <spirit:description>Determines the overall functionality of the abstract command</spirit:description>
-            <spirit:bitOffset>24</spirit:bitOffset>
             <spirit:bitWidth spirit:format="long">8</spirit:bitWidth>
             <spirit:volatile>true</spirit:volatile>
             <spirit:access>write-only</spirit:access>
@@ -30001,30 +29848,86 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.COMMAND" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PCCTRLR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>PROGBUF0</spirit:name>
-          <spirit:displayName>Program Buffer 0 Register</spirit:displayName>
-          <spirit:description>Program Buffer 0 Register</spirit:description>
-          <spirit:addressOffset>0x80</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:name>PCCMDR</spirit:name>
+          <spirit:displayName>Debug Register Performance Counter Command Register</spirit:displayName>
+          <spirit:description>Debug Register Performance Counter Command Register</spirit:description>
+          <spirit:addressOffset>0x5480</spirit:addressOffset>
+          <spirit:size spirit:format="long">8</spirit:size>
           <spirit:volatile>true</spirit:volatile>
-          <spirit:access>read-write</spirit:access>
+          <spirit:access>write-only</spirit:access>
           <spirit:reset>
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>DATA</spirit:name>
-            <spirit:displayName>data</spirit:displayName>
-            <spirit:description>Read/write access to the program buffer</spirit:description>
+            <spirit:name>RES</spirit:name>
+            <spirit:displayName>Reset</spirit:displayName>
+            <spirit:description>Reset accessed counter to the first event counter</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
             <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SAM</spirit:name>
+            <spirit:displayName>Sample</spirit:displayName>
+            <spirit:description>Sample status and values in all counters for reading</spirit:description>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>STOP</spirit:name>
+            <spirit:displayName>Stop</spirit:displayName>
+            <spirit:description>Stop counting all counters</spirit:description>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>STA</spirit:name>
+            <spirit:displayName>Start</spirit:displayName>
+            <spirit:description>Start counting configured events for all counters</spirit:description>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>CLR</spirit:name>
+            <spirit:displayName>Clear</spirit:displayName>
+            <spirit:description>Clear all counters to zero</spirit:description>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
             <spirit:writeValueConstraint>
               <spirit:minimum>0</spirit:minimum>
               <spirit:maximum>0</spirit:maximum>
@@ -30034,26 +29937,26 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PROGBUF0" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PCCMDR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>SBCS</spirit:name>
-          <spirit:displayName>System Bus Access Control and Status Register</spirit:displayName>
-          <spirit:description>System Bus Access Control and Status Register</spirit:description>
-          <spirit:addressOffset>0xE0</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:name>PCSR</spirit:name>
+          <spirit:displayName>Debug Register Performance Counter Status Register</spirit:displayName>
+          <spirit:description>Debug Register Performance Counter Status Register</spirit:description>
+          <spirit:addressOffset>0x54C0</spirit:addressOffset>
+          <spirit:size spirit:format="long">2</spirit:size>
           <spirit:volatile>true</spirit:volatile>
-          <spirit:access>read-write</spirit:access>
+          <spirit:access>read-only</spirit:access>
           <spirit:reset>
-            <spirit:value spirit:format="long">0x20040404</spirit:value>
+            <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>SBACCESS8</spirit:name>
-            <spirit:displayName>sbaccess8</spirit:displayName>
-            <spirit:description>1 when 8-bit system bus accesses are supported</spirit:description>
+            <spirit:name>FULL</spirit:name>
+            <spirit:displayName>Full</spirit:displayName>
+            <spirit:description>Set when a new latency counter event is started before previous event has finished</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
             <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
             <spirit:volatile>true</spirit:volatile>
@@ -30062,12 +29965,13 @@
               <spirit:minimum>0</spirit:minimum>
               <spirit:maximum>0</spirit:maximum>
             </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>SBACCESS16</spirit:name>
-            <spirit:displayName>sbaccess16</spirit:displayName>
-            <spirit:description>1 when 16-bit system bus accesses are supported</spirit:description>
+            <spirit:name>OF</spirit:name>
+            <spirit:displayName>Overflow</spirit:displayName>
+            <spirit:description>Set when the counter has counted past its maximum value</spirit:description>
             <spirit:bitOffset>1</spirit:bitOffset>
             <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
             <spirit:volatile>true</spirit:volatile>
@@ -30076,255 +29980,22 @@
               <spirit:minimum>0</spirit:minimum>
               <spirit:maximum>0</spirit:maximum>
             </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBACCESS32</spirit:name>
-            <spirit:displayName>sbaccess32</spirit:displayName>
-            <spirit:description>1 when 32-bit system bus accesses are supported</spirit:description>
-            <spirit:bitOffset>2</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBACCESS64</spirit:name>
-            <spirit:displayName>sbaccess64</spirit:displayName>
-            <spirit:description>1 when 64-bit system bus accesses are supported</spirit:description>
-            <spirit:bitOffset>3</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBACCESS128</spirit:name>
-            <spirit:displayName>sbaccess128</spirit:displayName>
-            <spirit:description>1 when 128-bit system bus accesses are supported</spirit:description>
-            <spirit:bitOffset>4</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBASIZE</spirit:name>
-            <spirit:displayName>sbasize</spirit:displayName>
-            <spirit:description>Width of system bus addresses in bits</spirit:description>
-            <spirit:bitOffset>5</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">7</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBERROR</spirit:name>
-            <spirit:displayName>sberror</spirit:displayName>
-            <spirit:description>When the system bus master encounters an error this field gets set</spirit:description>
-            <spirit:bitOffset>12</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">3</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBREADONDATA</spirit:name>
-            <spirit:displayName>sbreadondata</spirit:displayName>
-            <spirit:description>Every read from sbdata0 automatically triggers a system bus read</spirit:description>
-            <spirit:bitOffset>15</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBAUTOINCREMENT</spirit:name>
-            <spirit:displayName>sbautoincrement</spirit:displayName>
-            <spirit:description>sbaddress is incremented by the access size</spirit:description>
-            <spirit:bitOffset>16</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBACCESS</spirit:name>
-            <spirit:displayName>sbaccess</spirit:displayName>
-            <spirit:description>Select the access size to use for system bus accesses</spirit:description>
-            <spirit:bitOffset>17</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">3</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBREADONADDR</spirit:name>
-            <spirit:displayName>sbreadonaddr</spirit:displayName>
-            <spirit:description>Every write to sbaddress0 automatically triggers a system bus read</spirit:description>
-            <spirit:bitOffset>20</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBBUSY</spirit:name>
-            <spirit:displayName>sbbusy</spirit:displayName>
-            <spirit:description>Indicates the system bus master is busy</spirit:description>
-            <spirit:bitOffset>21</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBBUSYERROR</spirit:name>
-            <spirit:displayName>sbbusyerror</spirit:displayName>
-            <spirit:description>Read while read in progress or initiate access when one is in progress</spirit:description>
-            <spirit:bitOffset>22</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:field>
-            <spirit:name>SBVERSION</spirit:name>
-            <spirit:displayName>sbversion</spirit:displayName>
-            <spirit:description>The System Bus interface conforms to this version of the spec</spirit:description>
-            <spirit:bitOffset>29</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">3</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.SBCS" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_MEM_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PCSR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>SBADDRESS0</spirit:name>
-          <spirit:displayName>System Bus Address 0 Register</spirit:displayName>
-          <spirit:description>System Bus Address 0 Register</spirit:description>
-          <spirit:addressOffset>0xE4</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
-          <spirit:volatile>true</spirit:volatile>
-          <spirit:access>read-write</spirit:access>
-          <spirit:reset>
-            <spirit:value spirit:format="long">0x0</spirit:value>
-          </spirit:reset>
-          <spirit:field>
-            <spirit:name>ADDRESS</spirit:name>
-            <spirit:displayName>address</spirit:displayName>
-            <spirit:description>Accesses bits 31:0 of the physical address</spirit:description>
-            <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:vendorExtensions>
-            <xilinx:registerInfo>
-              <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.SBADDRESS0" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_MEM_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
-              </xilinx:enablement>
-            </xilinx:registerInfo>
-          </spirit:vendorExtensions>
-        </spirit:register>
-        <spirit:register>
-          <spirit:name>SBDATA0</spirit:name>
-          <spirit:displayName>System Bus Data 0 Register</spirit:displayName>
-          <spirit:description>System Bus Data 0 Register</spirit:description>
-          <spirit:addressOffset>0xF0</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
-          <spirit:volatile>true</spirit:volatile>
-          <spirit:access>read-write</spirit:access>
-          <spirit:reset>
-            <spirit:value spirit:format="long">0x0</spirit:value>
-          </spirit:reset>
-          <spirit:field>
-            <spirit:name>DATA</spirit:name>
-            <spirit:displayName>data</spirit:displayName>
-            <spirit:description>Accesses bits 31:0 of sbdata</spirit:description>
-            <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
-            <spirit:volatile>true</spirit:volatile>
-            <spirit:access>read-write</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-          <spirit:vendorExtensions>
-            <xilinx:registerInfo>
-              <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.SBDATA0" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_MEM_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
-              </xilinx:enablement>
-            </xilinx:registerInfo>
-          </spirit:vendorExtensions>
-        </spirit:register>
-        <spirit:register>
-          <spirit:name>HALTSUM0</spirit:name>
-          <spirit:displayName>Halt Summary 0 Register</spirit:displayName>
-          <spirit:description>Halt Summary 0 Register</spirit:description>
-          <spirit:addressOffset>0x100</spirit:addressOffset>
+          <spirit:name>PCDRR</spirit:name>
+          <spirit:displayName>Performance Counter Data Read Register</spirit:displayName>
+          <spirit:description>Performance Counter Data Read Register</spirit:description>
+          <spirit:addressOffset>0x5580</spirit:addressOffset>
           <spirit:size spirit:format="long">32</spirit:size>
           <spirit:volatile>true</spirit:volatile>
           <spirit:access>read-only</spirit:access>
@@ -30332,9 +30003,527 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>HALTSUM0</spirit:name>
-            <spirit:displayName>haltsum0</spirit:displayName>
-            <spirit:description>Each bit indicates whether one specific hart is halted or not</spirit:description>
+            <spirit:name>ITEM</spirit:name>
+            <spirit:displayName>Item</spirit:displayName>
+            <spirit:description>Sampled counter value item</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PCDRR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>PCDWR</spirit:name>
+          <spirit:displayName>Performance Counter Data Write Register</spirit:displayName>
+          <spirit:description>Performance Counter Data Write Register</spirit:description>
+          <spirit:addressOffset>0x55C0</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>ITEM</spirit:name>
+            <spirit:displayName>Item</spirit:displayName>
+            <spirit:description>Counter value item to write into a counter</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PCDWR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>TCTRLR</spirit:name>
+          <spirit:displayName>Debug Register Trace Control Register</spirit:displayName>
+          <spirit:description>Debug Register Trace Control Register</spirit:description>
+          <spirit:addressOffset>0x5840</spirit:addressOffset>
+          <spirit:size spirit:format="long">22</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>SR</spirit:name>
+            <spirit:displayName>Save Return</spirit:displayName>
+            <spirit:description>Save new program counter for return instructions</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SL</spirit:name>
+            <spirit:displayName>Save Load</spirit:displayName>
+            <spirit:description>Save load and get instructions for new data value</spirit:description>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>SPC</spirit:name>
+            <spirit:displayName>Save PC</spirit:displayName>
+            <spirit:description>Save new program counter for all taken branches</spirit:description>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>FH</spirit:name>
+            <spirit:displayName>Full Halt</spirit:displayName>
+            <spirit:description>Debug Halt on full trace buffer or cycle count overflow</spirit:description>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>LEVEL</spirit:name>
+            <spirit:displayName>Level</spirit:displayName>
+            <spirit:description>Trace compression level:
+  00 - Complete trace
+  01 - Program flow
+  11 - Program flow and cycle count
+</spirit:description>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">2</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>TP</spirit:name>
+            <spirit:displayName>Tracepoint</spirit:displayName>
+            <spirit:description>Change corresponding breakpoint or watchpoint to a tracepoint</spirit:description>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">16</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.TCTRLR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>TCMDR</spirit:name>
+          <spirit:displayName>Debug Register Trace Command Register</spirit:displayName>
+          <spirit:description>Debug Register Trace Command Register</spirit:description>
+          <spirit:addressOffset>0x5880</spirit:addressOffset>
+          <spirit:size spirit:format="long">4</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>SAM</spirit:name>
+            <spirit:displayName>Sample</spirit:displayName>
+            <spirit:description>Sample number of current items in the trace buffer</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>STOP</spirit:name>
+            <spirit:displayName>Stop</spirit:displayName>
+            <spirit:description>Stop trace immediately</spirit:description>
+            <spirit:bitOffset>1</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>STA</spirit:name>
+            <spirit:displayName>Start</spirit:displayName>
+            <spirit:description>Start trace immediately</spirit:description>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>CLR</spirit:name>
+            <spirit:displayName>Clear</spirit:displayName>
+            <spirit:description>Clear trace status and empty the trace buffer</spirit:description>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.TCMDR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>TSR</spirit:name>
+          <spirit:displayName>Debug Register Trace Status Register</spirit:displayName>
+          <spirit:description>Debug Register Trace Status Register</spirit:description>
+          <spirit:addressOffset>0x58C0</spirit:addressOffset>
+          <spirit:size spirit:format="long">18</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>IC</spirit:name>
+            <spirit:displayName>Item Count</spirit:displayName>
+            <spirit:description>Sampled trace buffer item count</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">16</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>OF</spirit:name>
+            <spirit:displayName>Overflow</spirit:displayName>
+            <spirit:description>Cycle count overflow</spirit:description>
+            <spirit:bitOffset>16</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>STA</spirit:name>
+            <spirit:displayName>Started</spirit:displayName>
+            <spirit:description>Trace started</spirit:description>
+            <spirit:bitOffset>17</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.TSR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>TDRR</spirit:name>
+          <spirit:displayName>Trace Data Read Register</spirit:displayName>
+          <spirit:description>Trace Data Read Register</spirit:description>
+          <spirit:addressOffset>0x5980</spirit:addressOffset>
+          <spirit:size spirit:format="long">18</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>ITEM</spirit:name>
+            <spirit:displayName>Item</spirit:displayName>
+            <spirit:description>Embedded Trace Buffer item</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">18</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:readAction>modify</spirit:readAction>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.TDRR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>PCTRLR</spirit:name>
+          <spirit:displayName>Debug Register Profiling Control Register</spirit:displayName>
+          <spirit:description>Debug Register Profiling Control Register</spirit:description>
+          <spirit:addressOffset>0x5C40</spirit:addressOffset>
+          <spirit:size spirit:format="long">8</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>BIN</spirit:name>
+            <spirit:displayName>Bin Control</spirit:displayName>
+            <spirit:description>Number of addresses counted by each bin</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">5</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>CC</spirit:name>
+            <spirit:displayName>Cycle Count</spirit:displayName>
+            <spirit:description>Enable cycle count to count cycles of executed instructions</spirit:description>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>DIS</spirit:name>
+            <spirit:displayName>Disable</spirit:displayName>
+            <spirit:description>Disable and stop profiling</spirit:description>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>ENA</spirit:name>
+            <spirit:displayName>Enable</spirit:displayName>
+            <spirit:description>Enable and start profiling</spirit:description>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">1</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PCTRLR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>PLAR</spirit:name>
+          <spirit:displayName>Profiling Low Address Register</spirit:displayName>
+          <spirit:description>Profiling Low Address Register</spirit:description>
+          <spirit:addressOffset>0x5C80</spirit:addressOffset>
+          <spirit:size spirit:format="long">30</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>LWA</spirit:name>
+            <spirit:displayName>Low word address</spirit:displayName>
+            <spirit:description>Low word address of the profiled area</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">30</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PLAR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>PHAR</spirit:name>
+          <spirit:displayName>Profiling High Address Register</spirit:displayName>
+          <spirit:description>Profiling High Address Register</spirit:description>
+          <spirit:addressOffset>0x5CC0</spirit:addressOffset>
+          <spirit:size spirit:format="long">30</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>HWA</spirit:name>
+            <spirit:displayName>High word address</spirit:displayName>
+            <spirit:description>High word address of the profiled area</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">30</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PHAR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>PBAR</spirit:name>
+          <spirit:displayName>Profiling Buffer Address Register</spirit:displayName>
+          <spirit:description>Profiling Buffer Address Register</spirit:description>
+          <spirit:addressOffset>0x5D00</spirit:addressOffset>
+          <spirit:size spirit:format="long">15</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>BWA</spirit:name>
+            <spirit:displayName>Buffer word address</spirit:displayName>
+            <spirit:description>Buffer word address of the profiled area</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">15</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PBAR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>PDRR0</spirit:name>
+          <spirit:displayName>Profiling Data Read Register 0</spirit:displayName>
+          <spirit:description>Profiling Data Read Register, 32 LSB</spirit:description>
+          <spirit:addressOffset>0x5D80</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>DATA</spirit:name>
+            <spirit:displayName>Read Data</spirit:displayName>
+            <spirit:description>Number of executed instructions or clock cycles in the bin, 32 LSB</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
             <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
             <spirit:volatile>true</spirit:volatile>
@@ -30348,7 +30537,73 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.HALTSUM0" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PDRR0" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>PDRR1</spirit:name>
+          <spirit:displayName>Profiling Data Read Register 1</spirit:displayName>
+          <spirit:description>Profiling Data Read Register, 4 MSB</spirit:description>
+          <spirit:addressOffset>0x5D84</spirit:addressOffset>
+          <spirit:size spirit:format="long">4</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>DATA</spirit:name>
+            <spirit:displayName>Read Data</spirit:displayName>
+            <spirit:description>Number of executed instructions or clock cycles in the bin, 4 MSB</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">4</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>read-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PDRR1" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+              </xilinx:enablement>
+            </xilinx:registerInfo>
+          </spirit:vendorExtensions>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>PDWR</spirit:name>
+          <spirit:displayName>Profiling Data Write Register</spirit:displayName>
+          <spirit:description>Profiling Data Write Register</spirit:description>
+          <spirit:addressOffset>0x5DC0</spirit:addressOffset>
+          <spirit:size spirit:format="long">32</spirit:size>
+          <spirit:volatile>true</spirit:volatile>
+          <spirit:access>write-only</spirit:access>
+          <spirit:reset>
+            <spirit:value spirit:format="long">0x0</spirit:value>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>DATA</spirit:name>
+            <spirit:displayName>Write Data</spirit:displayName>
+            <spirit:description>Data to write to a bin</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
+            <spirit:volatile>true</spirit:volatile>
+            <spirit:access>write-only</spirit:access>
+            <spirit:writeValueConstraint>
+              <spirit:minimum>0</spirit:minimum>
+              <spirit:maximum>0</spirit:maximum>
+            </spirit:writeValueConstraint>
+            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
+          </spirit:field>
+          <spirit:vendorExtensions>
+            <xilinx:registerInfo>
+              <xilinx:enablement>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.PDWR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
@@ -30980,7 +31235,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">8</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -31204,7 +31459,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">8</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -63113,7 +63368,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.bscan_ext_bscanid_en" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_USE_BSCAN&apos;)) = 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_USE_JTAG_BSCAN&apos;)) > 0)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.bscan_ext_bscanid_en" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_USE_BSCAN&apos;)) = 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_BSCANID&apos;)) != 0)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -63283,6 +63538,10 @@
         <spirit:name>C_DEVICE</spirit:name>
         <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DEVICE">xc7k325t</spirit:value>
       </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="string">
+        <spirit:name>C_REVISION</spirit:name>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_REVISION"/>
+      </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_JTAG_CHAIN</spirit:name>
         <spirit:displayName>Specifies the JTAG user-defined register used</spirit:displayName>
@@ -63304,21 +63563,6 @@
         <spirit:name>C_BSCANID</spirit:name>
         <spirit:displayName>Define BSCAN id</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_BSCANID">76547328</spirit:value>
-      </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_USE_BSCAN_SWITCH</spirit:name>
-        <spirit:displayName>Use internal BSCAN switch</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_BSCAN_SWITCH">0</spirit:value>
-      </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_USE_JTAG_BSCAN</spirit:name>
-        <spirit:displayName>Use JTAG to BSCAN conversion</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_JTAG_BSCAN">1</spirit:value>
-      </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>C_DTM_IDCODE</spirit:name>
-        <spirit:displayName>Define DTM IDCODE value</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DTM_IDCODE">147</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DEBUG_INTERFACE</spirit:name>
@@ -63455,7 +63699,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S_AXI_ADDR_WIDTH</spirit:name>
         <spirit:displayName>AXI Slave Address Bus Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH" spirit:minimum="9" spirit:maximum="9" spirit:rangeType="long">9</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXI_ADDR_WIDTH" spirit:minimum="4" spirit:maximum="16" spirit:rangeType="long">4</spirit:value>
         <spirit:vendorExtensions>
           <xilinx:parameterInfo>
             <xilinx:enablement>
@@ -63588,17 +63832,8 @@
   </spirit:model>
   <spirit:choices>
     <spirit:choice>
-      <spirit:name>choice_list_ca108395</spirit:name>
-      <spirit:enumeration>2</spirit:enumeration>
-      <spirit:enumeration>4</spirit:enumeration>
-      <spirit:enumeration>8</spirit:enumeration>
-      <spirit:enumeration>16</spirit:enumeration>
+      <spirit:name>choice_list_74c0f516</spirit:name>
       <spirit:enumeration>32</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
-      <spirit:name>choice_list_cb343223</spirit:name>
-      <spirit:enumeration>32</spirit:enumeration>
-      <spirit:enumeration>34</spirit:enumeration>
       <spirit:enumeration>36</spirit:enumeration>
       <spirit:enumeration>40</spirit:enumeration>
       <spirit:enumeration>44</spirit:enumeration>
@@ -63607,6 +63842,14 @@
       <spirit:enumeration>56</spirit:enumeration>
       <spirit:enumeration>60</spirit:enumeration>
       <spirit:enumeration>64</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_ca108395</spirit:name>
+      <spirit:enumeration>2</spirit:enumeration>
+      <spirit:enumeration>4</spirit:enumeration>
+      <spirit:enumeration>8</spirit:enumeration>
+      <spirit:enumeration>16</spirit:enumeration>
+      <spirit:enumeration>32</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_list_d85ad257</spirit:name>
@@ -63670,7 +63913,7 @@
       <spirit:enumeration spirit:text="EXTERNAL_HIDDEN">4</spirit:enumeration>
     </spirit:choice>
   </spirit:choices>
-  <spirit:description>Debug module for MicroBlaze V soft processor, implementing the RISC-V debug protocol.</spirit:description>
+  <spirit:description>Debug module for MicroBlaze Soft Processor.</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>C_XMTC</spirit:name>
@@ -63705,45 +63948,9 @@
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_USE_BSCAN_SWITCH</spirit:name>
-      <spirit:displayName>Use internal BSCAN switch</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_BSCAN_SWITCH" spirit:order="7" spirit:configGroups="1 Advanced">0</spirit:value>
-      <spirit:vendorExtensions>
-        <xilinx:parameterInfo>
-          <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_USE_BSCAN_SWITCH">true</xilinx:isEnabled>
-          </xilinx:enablement>
-        </xilinx:parameterInfo>
-      </spirit:vendorExtensions>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>C_USE_JTAG_BSCAN</spirit:name>
-      <spirit:displayName>Use JTAG to BSCAN conversion</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_JTAG_BSCAN" spirit:order="8" spirit:configGroups="1 Advanced">1</spirit:value>
-      <spirit:vendorExtensions>
-        <xilinx:parameterInfo>
-          <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_USE_JTAG_BSCAN">true</xilinx:isEnabled>
-          </xilinx:enablement>
-        </xilinx:parameterInfo>
-      </spirit:vendorExtensions>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>C_DTM_IDCODE</spirit:name>
-      <spirit:displayName>Define DTM IDCODE value</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DTM_IDCODE" spirit:order="9" spirit:configGroups="1 Advanced">147</spirit:value>
-      <spirit:vendorExtensions>
-        <xilinx:parameterInfo>
-          <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_DTM_IDCODE">true</xilinx:isEnabled>
-          </xilinx:enablement>
-        </xilinx:parameterInfo>
-      </spirit:vendorExtensions>
-    </spirit:parameter>
-    <spirit:parameter>
       <spirit:name>C_DEBUG_INTERFACE</spirit:name>
       <spirit:displayName>MicroBlaze Debug Connection</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DEBUG_INTERFACE" spirit:choiceRef="choice_pairs_56d5ba32" spirit:order="10" spirit:configGroups="1 Advanced">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DEBUG_INTERFACE" spirit:choiceRef="choice_pairs_56d5ba32" spirit:order="7" spirit:configGroups="1 Advanced">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63754,11 +63961,11 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_USE_CONFIG_RESET</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_CONFIG_RESET" spirit:choiceRef="choice_list_d85ad257" spirit:order="11" spirit:configGroups="2 NoDisplay">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_CONFIG_RESET" spirit:choiceRef="choice_list_d85ad257" spirit:order="8" spirit:configGroups="2 NoDisplay">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_AVOID_PRIMITIVES</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_AVOID_PRIMITIVES" spirit:order="12" spirit:configGroups="2 NoDisplay">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_AVOID_PRIMITIVES" spirit:order="9" spirit:configGroups="2 NoDisplay">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63770,7 +63977,7 @@
     <spirit:parameter>
       <spirit:name>C_INTERCONNECT</spirit:name>
       <spirit:displayName>Specifies the Bus Interface for the JTAG UART</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_INTERCONNECT" spirit:choiceRef="choice_pairs_3f3d981f" spirit:order="13" spirit:configGroups="1 UART">2</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_INTERCONNECT" spirit:choiceRef="choice_pairs_3f3d981f" spirit:order="10" spirit:configGroups="1 UART">2</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63782,7 +63989,7 @@
     <spirit:parameter>
       <spirit:name>C_S_AXI_ADDR_WIDTH</spirit:name>
       <spirit:displayName>AXI Slave Address Bus Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI_ADDR_WIDTH" spirit:order="14" spirit:configGroups="2 NoDisplay">9</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI_ADDR_WIDTH" spirit:order="11" spirit:configGroups="2 NoDisplay">4</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63794,7 +64001,7 @@
     <spirit:parameter>
       <spirit:name>C_S_AXI_DATA_WIDTH</spirit:name>
       <spirit:displayName>AXI Slave Data Bus Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI_DATA_WIDTH" spirit:order="15" spirit:configGroups="2 NoDisplay">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI_DATA_WIDTH" spirit:order="12" spirit:configGroups="2 NoDisplay">32</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63806,7 +64013,7 @@
     <spirit:parameter>
       <spirit:name>C_S_AXI_ACLK_FREQ_HZ</spirit:name>
       <spirit:displayName>AXI Slave Clock Frequency</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI_ACLK_FREQ_HZ" spirit:order="16" spirit:configGroups="2 NoDisplay">100000000</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI_ACLK_FREQ_HZ" spirit:order="13" spirit:configGroups="2 NoDisplay">100000000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63818,7 +64025,7 @@
     <spirit:parameter>
       <spirit:name>C_M_AXI_ADDR_WIDTH</spirit:name>
       <spirit:displayName>AXI Master Address Bus Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_ADDR_WIDTH" spirit:choiceRef="choice_list_cb343223" spirit:order="17" spirit:configGroups="2 NoDisplay">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_ADDR_WIDTH" spirit:choiceRef="choice_list_74c0f516" spirit:order="14" spirit:configGroups="2 NoDisplay">32</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63830,7 +64037,7 @@
     <spirit:parameter>
       <spirit:name>C_M_AXI_DATA_WIDTH</spirit:name>
       <spirit:displayName>AXI Master Data Bus Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_DATA_WIDTH" spirit:order="18" spirit:configGroups="2 NoDisplay">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_DATA_WIDTH" spirit:order="15" spirit:configGroups="2 NoDisplay">32</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63842,7 +64049,7 @@
     <spirit:parameter>
       <spirit:name>C_M_AXI_THREAD_ID_WIDTH</spirit:name>
       <spirit:displayName>AXI Master Thread ID Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_THREAD_ID_WIDTH" spirit:order="19" spirit:configGroups="2 NoDisplay">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_THREAD_ID_WIDTH" spirit:order="16" spirit:configGroups="2 NoDisplay">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63854,7 +64061,7 @@
     <spirit:parameter>
       <spirit:name>C_ADDR_SIZE</spirit:name>
       <spirit:displayName>LMB Master Address Bus Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ADDR_SIZE" spirit:choiceRef="choice_list_cb343223" spirit:order="20" spirit:configGroups="2 NoDisplay">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ADDR_SIZE" spirit:choiceRef="choice_list_74c0f516" spirit:order="17" spirit:configGroups="2 NoDisplay">32</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63866,7 +64073,7 @@
     <spirit:parameter>
       <spirit:name>C_DATA_SIZE</spirit:name>
       <spirit:displayName>LMB Master Data Bus Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DATA_SIZE" spirit:order="21" spirit:configGroups="2 NoDisplay">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DATA_SIZE" spirit:order="18" spirit:configGroups="2 NoDisplay">32</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63878,7 +64085,7 @@
     <spirit:parameter>
       <spirit:name>C_LMB_PROTOCOL</spirit:name>
       <spirit:displayName>LMB Master Protocol</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_LMB_PROTOCOL" spirit:choiceRef="choice_pairs_0873e75e" spirit:order="22" spirit:configGroups="2 NoDisplay">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_LMB_PROTOCOL" spirit:choiceRef="choice_pairs_0873e75e" spirit:order="19" spirit:configGroups="2 NoDisplay">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63890,7 +64097,7 @@
     <spirit:parameter>
       <spirit:name>C_M_AXIS_DATA_WIDTH</spirit:name>
       <spirit:displayName>AXI Stream Master Data Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXIS_DATA_WIDTH" spirit:order="23" spirit:configGroups="2 NoDisplay">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXIS_DATA_WIDTH" spirit:order="20" spirit:configGroups="2 NoDisplay">32</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63902,7 +64109,7 @@
     <spirit:parameter>
       <spirit:name>C_M_AXIS_ID_WIDTH</spirit:name>
       <spirit:displayName>AXI Stream Master ID Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXIS_ID_WIDTH" spirit:order="24" spirit:configGroups="2 NoDisplay">7</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXIS_ID_WIDTH" spirit:order="21" spirit:configGroups="2 NoDisplay">7</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63914,27 +64121,27 @@
     <spirit:parameter>
       <spirit:name>C_MB_DBG_PORTS</spirit:name>
       <spirit:displayName>Number of MicroBlaze debug ports</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_MB_DBG_PORTS" spirit:order="25" spirit:configGroups="1 Debug" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_MB_DBG_PORTS" spirit:order="22" spirit:configGroups="1 Debug" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_USE_UART</spirit:name>
       <spirit:displayName>Enable JTAG UART</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_UART" spirit:choiceRef="choice_pairs_4873554b" spirit:order="26" spirit:configGroups="1 UART">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_UART" spirit:choiceRef="choice_pairs_4873554b" spirit:order="23" spirit:configGroups="1 UART">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_DBG_REG_ACCESS</spirit:name>
       <spirit:displayName>Enable Debug Register Access From AXI</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DBG_REG_ACCESS" spirit:choiceRef="choice_pairs_4873554b" spirit:order="27" spirit:configGroups="1 Debug">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DBG_REG_ACCESS" spirit:choiceRef="choice_pairs_4873554b" spirit:order="24" spirit:configGroups="1 Debug">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_DBG_MEM_ACCESS</spirit:name>
       <spirit:displayName>Enable AXI Memory Access From Debug</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DBG_MEM_ACCESS" spirit:choiceRef="choice_pairs_4873554b" spirit:order="28" spirit:configGroups="1 Debug">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DBG_MEM_ACCESS" spirit:choiceRef="choice_pairs_4873554b" spirit:order="25" spirit:configGroups="1 Debug">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_USE_CROSS_TRIGGER</spirit:name>
       <spirit:displayName>Enable Cross Trigger</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_CROSS_TRIGGER" spirit:choiceRef="choice_pairs_4873554b" spirit:order="29" spirit:configGroups="1 Debug">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_CROSS_TRIGGER" spirit:choiceRef="choice_pairs_4873554b" spirit:order="26" spirit:configGroups="1 Debug">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63946,7 +64153,7 @@
     <spirit:parameter>
       <spirit:name>C_TRIG_IN_PORTS</spirit:name>
       <spirit:displayName>Number of External Trigger Inputs</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRIG_IN_PORTS" spirit:order="30" spirit:configGroups="1 Advanced" spirit:minimum="0" spirit:maximum="4" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRIG_IN_PORTS" spirit:order="27" spirit:configGroups="1 Advanced" spirit:minimum="0" spirit:maximum="4" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63958,7 +64165,7 @@
     <spirit:parameter>
       <spirit:name>C_TRIG_OUT_PORTS</spirit:name>
       <spirit:displayName>Number of External Trigger Outputs</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRIG_OUT_PORTS" spirit:order="31" spirit:configGroups="1 Advanced" spirit:minimum="0" spirit:maximum="4" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRIG_OUT_PORTS" spirit:order="28" spirit:configGroups="1 Advanced" spirit:minimum="0" spirit:maximum="4" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63970,7 +64177,7 @@
     <spirit:parameter>
       <spirit:name>C_EXT_TRIG_RESET_VALUE</spirit:name>
       <spirit:displayName>External Trigger Reset Value</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_EXT_TRIG_RESET_VALUE" spirit:order="32" spirit:configGroups="1 Advanced" spirit:bitStringLength="20">0xF1234</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_EXT_TRIG_RESET_VALUE" spirit:order="29" spirit:configGroups="1 Advanced" spirit:bitStringLength="20">0xF1234</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63982,7 +64189,7 @@
     <spirit:parameter>
       <spirit:name>C_TRACE_OUTPUT</spirit:name>
       <spirit:displayName>Select External Trace Output Interface</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_OUTPUT" spirit:choiceRef="choice_pairs_d6ac2a69" spirit:order="33" spirit:configGroups="1 Debug">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_OUTPUT" spirit:choiceRef="choice_pairs_d6ac2a69" spirit:order="30" spirit:configGroups="1 Debug">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -63994,7 +64201,7 @@
     <spirit:parameter>
       <spirit:name>C_TRACE_DATA_WIDTH</spirit:name>
       <spirit:displayName>External Trace Data Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_DATA_WIDTH" spirit:choiceRef="choice_list_ca108395" spirit:order="34" spirit:configGroups="1 Debug">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_DATA_WIDTH" spirit:choiceRef="choice_list_ca108395" spirit:order="31" spirit:configGroups="1 Debug">32</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -64006,7 +64213,7 @@
     <spirit:parameter>
       <spirit:name>C_TRACE_CLK_FREQ_HZ</spirit:name>
       <spirit:displayName>External Trace Clock Frequency</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_CLK_FREQ_HZ" spirit:order="35" spirit:configGroups="1 Debug">200000000</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_CLK_FREQ_HZ" spirit:order="32" spirit:configGroups="1 Debug">200000000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -64018,7 +64225,7 @@
     <spirit:parameter>
       <spirit:name>C_TRACE_CLK_OUT_PHASE</spirit:name>
       <spirit:displayName>External Trace Output Clock Phase</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_CLK_OUT_PHASE" spirit:order="36" spirit:configGroups="1 Debug" spirit:minimum="0" spirit:maximum="360" spirit:rangeType="long">90</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_CLK_OUT_PHASE" spirit:order="33" spirit:configGroups="1 Debug" spirit:minimum="0" spirit:maximum="360" spirit:rangeType="long">90</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -64030,7 +64237,7 @@
     <spirit:parameter>
       <spirit:name>C_TRACE_ASYNC_RESET</spirit:name>
       <spirit:displayName>Use Asynchrnous Reset for External Trace</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_ASYNC_RESET" spirit:order="37" spirit:configGroups="2 NoDisplay">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_ASYNC_RESET" spirit:order="34" spirit:configGroups="2 NoDisplay">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -64042,7 +64249,7 @@
     <spirit:parameter>
       <spirit:name>C_TRACE_PROTOCOL</spirit:name>
       <spirit:displayName>Select External Trace Protocol</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_PROTOCOL" spirit:choiceRef="choice_pairs_13879a79" spirit:order="38" spirit:configGroups="2 NoDisplay">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_PROTOCOL" spirit:choiceRef="choice_pairs_13879a79" spirit:order="35" spirit:configGroups="2 NoDisplay">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -64054,7 +64261,7 @@
     <spirit:parameter>
       <spirit:name>C_TRACE_ID</spirit:name>
       <spirit:displayName>Select External Trace ID</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_ID" spirit:order="39" spirit:configGroups="2 NoDisplay" spirit:minimum="1" spirit:maximum="110" spirit:rangeType="long">110</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TRACE_ID" spirit:order="36" spirit:configGroups="2 NoDisplay" spirit:minimum="1" spirit:maximum="110" spirit:rangeType="long">110</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -64065,49 +64272,30 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="40">system_mdm_1_riscv_0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="37">system_mdm_0_0</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
-      <xilinx:displayName>MicroBlaze Debug Module (MDM) V</xilinx:displayName>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:displayName>MicroBlaze Debug Module (MDM)</xilinx:displayName>
+      <xilinx:coreRevision>26</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RST.DEBUG_SYS_RST.POLARITY" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_ADDR_SIZE" xilinx:valueSource="user" xilinx:valuePermission="bd_and_user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_AVOID_PRIMITIVES" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_BRK" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_BSCANID" xilinx:valueSource="user" xilinx:valuePermission="bd_and_user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_DATA_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_DBG_MEM_ACCESS" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_DBG_REG_ACCESS" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_DEBUG_INTERFACE" xilinx:valueSource="user" xilinx:valuePermission="bd_and_user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_INTERCONNECT" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_JTAG_CHAIN" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_LMB_PROTOCOL" xilinx:valueSource="user" xilinx:valuePermission="bd_and_user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_MB_DBG_PORTS" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M_AXIS_DATA_WIDTH" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M_AXIS_ID_WIDTH" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M_AXI_ADDR_WIDTH" xilinx:valueSource="user" xilinx:valuePermission="bd_and_user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M_AXI_DATA_WIDTH" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M_AXI_THREAD_ID_WIDTH" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_S_AXI_ACLK_FREQ_HZ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_S_AXI_ADDR_WIDTH" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_S_AXI_DATA_WIDTH" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_BSCAN" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_CONFIG_RESET" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_XMTC" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_ADDR_SIZE" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_DEBUG_INTERFACE" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_LMB_PROTOCOL" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M_AXI_ADDR_WIDTH" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="8d3d3565"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="69b881a3"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="5cc5bf73"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="8a125df6"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="4644be37"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="f83a8ba4"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="e4d07f4b"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="06b32f3a"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="65464de3"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="b4056615"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e0c16548"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="cb835589"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

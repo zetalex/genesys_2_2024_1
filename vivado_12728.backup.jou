@@ -1,0 +1,43 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Fri Jan 24 06:43:46 2025
+# Process ID: 12728
+# Current directory: C:/amd_work/genesys2/proj5/genesys_2_2024_1-main
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent28192 C:\amd_work\genesys2\proj5\genesys_2_2024_1-main\genesys2_basic.xpr
+# Log file: C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/vivado.log
+# Journal file: C:/amd_work/genesys2/proj5/genesys_2_2024_1-main\vivado.jou
+# Running On        :DESKTOP-3G7I8FF
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :Intel(R) Core(TM) Ultra 9 185H
+# CPU Frequency     :3072 MHz
+# CPU Physical cores:16
+# CPU Logical cores :22
+# Host memory       :34004 MB
+# Swap memory       :5100 MB
+# Total Virtual     :39105 MB
+# Available Virtual :25291 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/genesys2_basic.xpr
+update_compile_order -fileset sources_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+current_hw_device [get_hw_devices xc7k325t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+write_hw_platform -fixed -include_bit -force -file C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/system_wrapper.xsa
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
