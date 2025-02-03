@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Jan 30 14:59:49 2025
+# Process ID: 1567219
+# Current directory: /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_auto_ds_0_synth_1
+# Command line: vivado -log system_auto_ds_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_auto_ds_0.tcl
+# Log file: /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_auto_ds_0_synth_1/system_auto_ds_0.vds
+# Journal file: /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_auto_ds_0_synth_1/vivado.jou
+# Running On        :asanche4-lx01.engeu1.analog.com
+# Platform          :RedHatEnterprise
+# Operating System  :Red Hat Enterprise Linux release 8.8 (Ootpa)
+# Processor Detail  :Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
+# CPU Frequency     :2793.437 MHz
+# CPU Physical cores:6
+# CPU Logical cores :6
+# Host memory       :33406 MB
+# Swap memory       :10737 MB
+# Total Virtual     :44143 MB
+# Available Virtual :33576 MB
+#-----------------------------------------------------------
+source system_auto_ds_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1701.094 ; gain = 60.797 ; free physical = 10973 ; free virtual = 29416
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_auto_ds_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry a503ebd5629b4107 to dir: /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_auto_ds_0_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.cache/ip/2024.1/a/5/a503ebd5629b4107/system_auto_ds_5.dcp to /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_auto_ds_0_synth_1/system_auto_ds_0.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.cache/ip/2024.1/a/5/a503ebd5629b4107/system_auto_ds_5_stub.v to /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_auto_ds_0_synth_1/system_auto_ds_0_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.cache/ip/2024.1/a/5/a503ebd5629b4107/system_auto_ds_5_stub.vhdl to /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_auto_ds_0_synth_1/system_auto_ds_0_stub.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.cache/ip/2024.1/a/5/a503ebd5629b4107/system_auto_ds_5_sim_netlist.v to /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_auto_ds_0_synth_1/system_auto_ds_0_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.cache/ip/2024.1/a/5/a503ebd5629b4107/system_auto_ds_5_sim_netlist.vhdl to /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_auto_ds_0_synth_1/system_auto_ds_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP system_auto_ds_0, cache-ID = a503ebd5629b4107.
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 30 15:00:10 2025...

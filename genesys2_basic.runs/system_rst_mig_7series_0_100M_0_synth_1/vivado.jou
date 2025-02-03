@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Jan 30 13:46:29 2025
+# Process ID: 1506589
+# Current directory: /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_rst_mig_7series_0_100M_0_synth_1
+# Command line: vivado -log system_rst_mig_7series_0_100M_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_rst_mig_7series_0_100M_0.tcl
+# Log file: /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_rst_mig_7series_0_100M_0_synth_1/system_rst_mig_7series_0_100M_0.vds
+# Journal file: /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_rst_mig_7series_0_100M_0_synth_1/vivado.jou
+# Running On        :asanche4-lx01.engeu1.analog.com
+# Platform          :RedHatEnterprise
+# Operating System  :Red Hat Enterprise Linux release 8.8 (Ootpa)
+# Processor Detail  :Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
+# CPU Frequency     :2793.437 MHz
+# CPU Physical cores:6
+# CPU Logical cores :6
+# Host memory       :33406 MB
+# Swap memory       :10737 MB
+# Total Virtual     :44143 MB
+# Available Virtual :32314 MB
+#-----------------------------------------------------------
+source system_rst_mig_7series_0_100M_0.tcl -notrace

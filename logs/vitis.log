@@ -33,3 +33,41 @@
 07:19:34 INFO  : microblaze_0
 07:19:34 INFO  : CPU List generated successfully
 07:20:04 INFO  : cmd.exe, /C, C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\activate.bat && python C:\Xilinx\Vitis\2024.1\data\embeddedsw\scripts\pyesw\\repo.py -st  C:\Xilinx\Vitis\2024.1\data\embeddedsw && C:\Xilinx\Vitis\2024.1\tps\win64\lopper-1.1.0\env\Scripts\deactivate.bat
+16:53:54 INFO  : updated workspace path: 
+16:53:55 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//repo.py -st  /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw && deactivate
+16:54:47 INFO  : Successfully created repository data at /tmp/rigel_lopper_asanche416106464569964848260
+16:54:47 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_asanche415350011002288222077 -r /tmp/rigel_lopper_asanche416106464569964848260/.repo.yaml && deactivate
+16:54:47 INFO  : Embedded Template List generated successfully
+16:56:38 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//repo.py -st  /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw && deactivate
+16:56:38 INFO  : created .gitignore file for the project /home/asanche4/Master/nanoupv2025/vitis_Urbana_2024_1
+17:20:41 INFO  : updated workspace path: 
+17:20:41 INFO  : Embedded Template List generated successfully
+17:20:41 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//repo.py -st  /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw && deactivate
+17:21:11 INFO  : created .gitignore file for the project /home/asanche4/Master/nanoupv2025/vitis_Urbana_2024_1_analog
+17:24:36 INFO  : updated workspace path: 
+17:24:41 INFO  : updated workspace path: 
+17:24:41 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//repo.py -st  /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw && deactivate
+17:24:45 INFO  : Terminating Vitis C++ Server
+17:24:45 ERROR : Error in Creating Embedded Repositories at '/tmp/rigel_lopper_asanche43878940618130235726'.
+17:24:45 ERROR : Error in Creating Embedded Repositories at '/tmp/rigel_lopper_asanche43878940618130235726'.
+17:24:45 INFO  : Vitis C++ Server terminated
+17:25:15 INFO  : Successfully created repository data at /tmp/rigel_lopper_asanche46195282098210285203
+17:25:15 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_asanche43148681037756110507 -r /tmp/rigel_lopper_asanche46195282098210285203/.repo.yaml && deactivate
+17:25:16 INFO  : Embedded Template List generated successfully
+17:26:36 INFO  : Found no platform with name 'system_wrapper' in install repositories
+17:26:36 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && xsct /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/vitisng-server/scripts/platformutil.tcl /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/system_wrapper.xsa /tmp/rigel_lopper_temp_platformasanche414680672747183031973/system_wrapper/hw/sdt && deactivate
+17:26:47 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (/cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw) loading 3 seconds
+17:26:47 INFO  : SDT generated successfully
+17:26:47 INFO  : Lopper command for cpu List generation: lopper -O /tmp/rigel_lopper_asanche41408913140316533585 -f -i /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/lib/python3.8/site-packages/lopper/lops/lop-cpulist.dts /tmp/rigel_lopper_temp_platformasanche414680672747183031973/system_wrapper/hw/sdt/system-top.dts
+17:26:47 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && lopper -O /tmp/rigel_lopper_asanche41408913140316533585 -f -i /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/lib/python3.8/site-packages/lopper/lops/lop-cpulist.dts /tmp/rigel_lopper_temp_platformasanche414680672747183031973/system_wrapper/hw/sdt/system-top.dts && deactivate
+17:26:48 INFO  : microblaze_0
+17:26:48 INFO  : CPU List generated successfully
+17:27:06 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//repo.py -st  /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw && deactivate
+19:13:40 INFO  : updated workspace path: 
+19:13:40 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//repo.py -st  /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw && deactivate
+19:14:22 INFO  : Successfully created repository data at /tmp/rigel_lopper_asanche412795187392797927555
+19:14:22 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//get_template_data.py -d /tmp/rigel_lopper_asanche41567762830308149190 -r /tmp/rigel_lopper_asanche412795187392797927555/.repo.yaml && deactivate
+19:14:22 INFO  : Embedded Template List generated successfully
+19:14:56 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//repo.py -st  /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw && deactivate
+19:17:50 INFO  : updated workspace path: 
+19:17:51 INFO  : bash, -c, source /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/tps/lnx64/lopper-1.1.0/env/bin/activate && python /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw/scripts/pyesw//repo.py -st  /cad/adi/apps/xilinx/vivado/2024.1/Vitis/2024.1/data/embeddedsw && deactivate

@@ -1,0 +1,518 @@
+
+*** Running vivado
+    with args -log system_mdm_1_riscv_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_mdm_1_riscv_0.tcl
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Thu Jan 30 13:47:08 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source system_mdm_1_riscv_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 1699.062 ; gain = 57.828 ; free physical = 428 ; free virtual = 22985
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: system_mdm_1_riscv_0
+Command: synth_design -top system_mdm_1_riscv_0 -part xc7k325tffg900-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-1540] The version limit for your license is '2024.06' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Device 21-9227] Part: xc7k325tffg900-2 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1509701
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2541.449 ; gain = 421.715 ; free physical = 275 ; free virtual = 22447
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'system_mdm_1_riscv_0' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/synth/system_mdm_1_riscv_0.vhd:74]
+	Parameter C_FAMILY bound to: kintex7 - type: string 
+	Parameter C_DEVICE bound to: xc7k325t - type: string 
+	Parameter C_JTAG_CHAIN bound to: 2 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_BSCANID bound to: 76547328 - type: integer 
+	Parameter C_USE_BSCAN_SWITCH bound to: 0 - type: integer 
+	Parameter C_USE_JTAG_BSCAN bound to: 1 - type: integer 
+	Parameter C_DTM_IDCODE bound to: 147 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_AVOID_PRIMITIVES bound to: 0 - type: integer 
+	Parameter C_INTERCONNECT bound to: 2 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_USE_UART bound to: 0 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
+	Parameter C_TRACE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TRACE_CLK_FREQ_HZ bound to: 200000000 - type: integer 
+	Parameter C_TRACE_CLK_OUT_PHASE bound to: 90 - type: integer 
+	Parameter C_TRACE_ASYNC_RESET bound to: 0 - type: integer 
+	Parameter C_TRACE_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_TRACE_ID bound to: 110 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_THREAD_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_ADDR_SIZE bound to: 32 - type: integer 
+	Parameter C_DATA_SIZE bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_M_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_ID_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'MDM_RISCV' declared at '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:9439' bound to instance 'U0' of component 'mdm_riscv' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/synth/system_mdm_1_riscv_0.vhd:1659]
+INFO: [Synth 8-638] synthesizing module 'MDM_RISCV' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:11124]
+	Parameter C_TARGET bound to: 1 - type: integer 
+	Parameter DISABLE_JTAG bound to: FALSE - type: string 
+	Parameter JTAG_CHAIN bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BSCANE2' declared at '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:507' bound to instance 'BSCAN_I' of component 'MB_BSCANE2' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:12713]
+INFO: [Synth 8-638] synthesizing module 'MB_BSCANE2' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:531]
+	Parameter DISABLE_JTAG bound to: FALSE - type: string 
+	Parameter JTAG_CHAIN bound to: 2 - type: integer 
+INFO: [Synth 8-113] binding component instance 'BSCANE2_I' to cell 'BSCANE2' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:541]
+INFO: [Synth 8-256] done synthesizing module 'MB_BSCANE2' (0#1) [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:531]
+	Parameter C_TARGET bound to: 1 - type: integer 
+	Parameter INIT bound to: 2'b10 
+INFO: [Synth 8-3491] module 'MB_LUT1' declared at '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1720' bound to instance 'LUT1_I' of component 'MB_LUT1' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:12731]
+INFO: [Synth 8-638] synthesizing module 'MB_LUT1' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1734]
+	Parameter INIT bound to: 2'b10 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'LUT1' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1756]
+INFO: [Synth 8-256] done synthesizing module 'MB_LUT1' (0#1) [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:1734]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:316' bound to instance 'config_with_scan_reset_i' of component 'xil_scan_reset_control' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:12775]
+INFO: [Synth 8-638] synthesizing module 'xil_scan_reset_control' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:325]
+INFO: [Synth 8-256] done synthesizing module 'xil_scan_reset_control' (0#1) [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:325]
+	Parameter C_TARGET bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BUFGCE_1' declared at '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:618' bound to instance 'BUFG_JTAG_TCK' of component 'MB_BUFGCE_1' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:13171]
+INFO: [Synth 8-638] synthesizing module 'MB_BUFGCE_1' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:632]
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'BUFGCE_1' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:642]
+INFO: [Synth 8-256] done synthesizing module 'MB_BUFGCE_1' (0#1) [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:632]
+	Parameter C_TARGET bound to: 1 - type: integer 
+	Parameter C_JTAG_CHAIN bound to: 2 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_DTM_IDCODE bound to: 147 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_EN_WIDTH bound to: 1 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_REG_NUM_CE bound to: 1 - type: integer 
+	Parameter C_REG_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_M_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_ID_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'MDM_Core' declared at '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:4912' bound to instance 'MDM_Core_I1' of component 'MDM_Core' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:13331]
+INFO: [Synth 8-638] synthesizing module 'MDM_Core' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:6129]
+	Parameter C_TARGET bound to: 1 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_DTM_IDCODE bound to: 147 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_EN_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'JTAG_CONTROL' declared at '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3250' bound to instance 'JTAG_CONTROL_I' of component 'JTAG_CONTROL' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:7213]
+INFO: [Synth 8-638] synthesizing module 'JTAG_CONTROL' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3477]
+WARNING: [Synth 8-6774] Null subtype or type declaration found [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3614]
+WARNING: [Synth 8-3919] null assignment ignored [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3614]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:316' bound to instance 'config_with_scan_reset_i' of component 'xil_scan_reset_control' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3637]
+INFO: [Synth 8-226] default block is never used [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3715]
+	Parameter C_TARGET bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BUFGCE_1' declared at '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:618' bound to instance 'BUFG_DRCK' of component 'MB_BUFGCE_1' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3875]
+	Parameter C_TARGET bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BUFG' declared at '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:569' bound to instance 'BUFG_UPDATE' of component 'MB_BUFG' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3887]
+INFO: [Synth 8-638] synthesizing module 'MB_BUFG' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:582]
+	Parameter C_TARGET bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'BUFG' [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:592]
+INFO: [Synth 8-256] done synthesizing module 'MB_BUFG' (0#1) [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:582]
+WARNING: [Synth 8-3919] null assignment ignored [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:4233]
+INFO: [Synth 8-256] done synthesizing module 'JTAG_CONTROL' (0#1) [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:3477]
+INFO: [Synth 8-256] done synthesizing module 'MDM_Core' (0#1) [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:6129]
+INFO: [Synth 8-256] done synthesizing module 'MDM_RISCV' (0#1) [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ipshared/48bc/hdl/mdm_riscv_v1_0_vh_rfs.vhd:11124]
+INFO: [Synth 8-256] done synthesizing module 'system_mdm_1_riscv_0' (0#1) [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/synth/system_mdm_1_riscv_0.vhd:74]
+WARNING: [Synth 8-7129] Port Clk in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Rst in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_AXI_ACLK in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_AXI_ARESETn in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_rd_idle in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_rd_resp[1] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_rd_resp[0] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_wr_idle in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_wr_resp[1] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_wr_resp[0] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[31] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[30] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[29] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[28] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[27] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[26] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[25] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[24] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[23] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[22] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[21] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[20] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[19] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[18] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[17] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[16] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[15] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[14] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[13] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[12] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[11] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[10] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[9] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[8] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[7] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[6] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[5] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[4] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[3] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[2] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[1] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_out[0] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_exists in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_data_empty in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_dwr_done in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_dwr_resp[1] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Master_dwr_resp[0] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_All_TDO in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[1] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[2] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[3] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[4] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[5] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[6] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[7] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[8] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[9] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[10] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[11] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[12] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[13] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[14] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[15] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[16] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[17] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[18] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[19] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[20] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[21] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[22] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[23] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[24] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[25] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[26] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[27] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[28] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[29] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[30] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_TDO_I[31] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_0[0] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_0[1] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_0[2] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_0[3] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_0[4] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_0[5] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_0[6] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_0[7] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_1[0] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_1[1] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_1[2] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_1[3] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_1[4] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_1[5] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_1[6] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_1[7] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_2[0] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_2[1] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_2[2] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_2[3] in module JTAG_CONTROL is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dbg_Trig_In_2[4] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2640.418 ; gain = 520.684 ; free physical = 1876 ; free virtual = 23864
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2652.293 ; gain = 532.559 ; free physical = 1861 ; free virtual = 23849
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2652.293 ; gain = 532.559 ; free physical = 1862 ; free virtual = 23850
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2658.230 ; gain = 0.000 ; free physical = 1843 ; free virtual = 23845
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_mdm_1_riscv_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_mdm_1_riscv_0_synth_1/dont_touch.xdc]
+Parsing XDC File [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0_ooc_trace.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0_ooc_trace.xdc] for cell 'U0'
+Parsing XDC File [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.gen/sources_1/bd/system/ip/system_mdm_1_riscv_0/system_mdm_1_riscv_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_mdm_1_riscv_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_mdm_1_riscv_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2805.051 ; gain = 0.000 ; free physical = 1598 ; free virtual = 23608
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  BUFGCE_1 => BUFGCTRL: 2 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2805.051 ; gain = 0.000 ; free physical = 1597 ; free virtual = 23607
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 1231 ; free virtual = 23292
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 1230 ; free virtual = 23291
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_mdm_1_riscv_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 1223 ; free virtual = 23284
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'Test_Access_Port.state_reg' in module 'JTAG_CONTROL'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                tl_reset |                 0000000000000001 |                             0000
+                    idle |                 0000000000000010 |                             0001
+               select_dr |                 0000000000000100 |                             0010
+               select_ir |                 0000000000001000 |                             1001
+              capture_ir |                 0000000000010000 |                             1010
+                shift_ir |                 0000000000100000 |                             1011
+                exit1_ir |                 0000000001000000 |                             1100
+                pause_ir |                 0000000010000000 |                             1101
+                exit2_ir |                 0000000100000000 |                             1110
+               update_ir |                 0000001000000000 |                             1111
+              capture_dr |                 0000010000000000 |                             0011
+                shift_dr |                 0000100000000000 |                             0100
+                exit1_dr |                 0001000000000000 |                             0101
+                pause_dr |                 0010000000000000 |                             0110
+                exit2_dr |                 0100000000000000 |                             0111
+               update_dr |                 1000000000000000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'Test_Access_Port.state_reg' using encoding 'one-hot' in module 'JTAG_CONTROL'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 1197 ; free virtual = 23258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               42 Bit    Registers := 1     
+	               32 Bit    Registers := 4     
+	                8 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 28    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 3     
+	  16 Input   16 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 16    
+	   2 Input    8 Bit        Muxes := 3     
+	  16 Input    5 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 20    
+	   4 Input    1 Bit        Muxes := 2     
+	  16 Input    1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2643 ; free virtual = 24704
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2241 ; free virtual = 24305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2241 ; free virtual = 24305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2240 ; free virtual = 24304
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2316 ; free virtual = 24390
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2316 ; free virtual = 24390
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2306 ; free virtual = 24380
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2320 ; free virtual = 24393
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2317 ; free virtual = 24390
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2317 ; free virtual = 24390
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                               | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|MDM_RISCV   | MDM_Core_I1/JTAG_CONTROL_I/dmi_reg[31] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|MDM_RISCV   | MDM_Core_I1/JTAG_CONTROL_I/dmi_reg[3]  | 28     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|MDM_RISCV   | Use_JTAG_BSCAN.bscanid_reg[27]         | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MDM_RISCV   | Use_JTAG_BSCAN.bscanid_reg[11]         | 9      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MDM_RISCV   | Use_JTAG_BSCAN.bscanid_reg[1]          | 8      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+----------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BSCANE2 |     1|
+|2     |BUFG    |     1|
+|3     |BUFGCE  |     2|
+|4     |CARRY4  |     1|
+|5     |LUT1    |     2|
+|6     |LUT2    |   105|
+|7     |LUT3    |    24|
+|8     |LUT4    |    41|
+|9     |LUT5    |    13|
+|10    |LUT6    |    18|
+|11    |SRL16E  |     4|
+|12    |SRLC32E |     1|
+|13    |FDCE    |     2|
+|14    |FDRE    |   185|
+|15    |FDSE    |     6|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2805.051 ; gain = 685.316 ; free physical = 2317 ; free virtual = 24390
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4323 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2805.051 ; gain = 532.559 ; free physical = 2305 ; free virtual = 24379
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2805.059 ; gain = 685.316 ; free physical = 2316 ; free virtual = 24389
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2805.059 ; gain = 0.000 ; free physical = 2312 ; free virtual = 24386
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2821.059 ; gain = 0.000 ; free physical = 2509 ; free virtual = 24578
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  BUFGCE_1 => BUFGCTRL: 2 instances
+
+Synth Design complete | Checksum: 56758911
+INFO: [Common 17-83] Releasing license: Synthesis
+57 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:44 . Memory (MB): peak = 2821.059 ; gain = 1096.246 ; free physical = 2503 ; free virtual = 24572
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1863.726; main = 1568.746; forked = 296.082
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4454.547; main = 2821.062; forked = 1649.492
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2845.070 ; gain = 0.000 ; free physical = 2482 ; free virtual = 24550
+INFO: [Common 17-1381] The checkpoint '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_mdm_1_riscv_0_synth_1/system_mdm_1_riscv_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_mdm_1_riscv_0, cache-ID = 63d7947a7790aa74
+INFO: [Coretcl 2-1174] Renamed 8 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2845.070 ; gain = 0.000 ; free physical = 2383 ; free virtual = 24454
+INFO: [Common 17-1381] The checkpoint '/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/system_mdm_1_riscv_0_synth_1/system_mdm_1_riscv_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file system_mdm_1_riscv_0_utilization_synth.rpt -pb system_mdm_1_riscv_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 30 13:48:32 2025...

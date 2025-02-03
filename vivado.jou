@@ -1,43 +1,168 @@
 #-----------------------------------------------------------
 # Vivado v2024.1 (64-bit)
-# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Fri Jan 24 06:43:46 2025
-# Process ID: 12728
-# Current directory: C:/amd_work/genesys2/proj5/genesys_2_2024_1-main
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent28192 C:\amd_work\genesys2\proj5\genesys_2_2024_1-main\genesys2_basic.xpr
-# Log file: C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/vivado.log
-# Journal file: C:/amd_work/genesys2/proj5/genesys_2_2024_1-main\vivado.jou
-# Running On        :DESKTOP-3G7I8FF
-# Platform          :Windows Server 2016 or Windows 10
-# Operating System  :26100
-# Processor Detail  :Intel(R) Core(TM) Ultra 9 185H
-# CPU Frequency     :3072 MHz
-# CPU Physical cores:16
-# CPU Logical cores :22
-# Host memory       :34004 MB
-# Swap memory       :5100 MB
-# Total Virtual     :39105 MB
-# Available Virtual :25291 MB
+# Start of session at: Thu Jan 30 15:03:26 2025
+# Process ID: 1570664
+# Current directory: /home/asanche4/Master/nanoupv2025/genesys_2_2024_1
+# Command line: vivado
+# Log file: /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/vivado.log
+# Journal file: /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/vivado.jou
+# Running On        :asanche4-lx01.engeu1.analog.com
+# Platform          :RedHatEnterprise
+# Operating System  :Red Hat Enterprise Linux release 8.8 (Ootpa)
+# Processor Detail  :Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
+# CPU Frequency     :2793.437 MHz
+# CPU Physical cores:6
+# CPU Logical cores :6
+# Host memory       :33406 MB
+# Swap memory       :10737 MB
+# Total Virtual     :44143 MB
+# Available Virtual :39165 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/genesys2_basic.xpr
+open_project /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.xpr
 update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_bd_design {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.srcs/sources_1/bd/system/system.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_cdma:4.1 axi_cdma_0
+endgroup
+set_property location {3 892 233} [get_bd_cells axi_cdma_0]
+startgroup
+set_property -dict [list \
+  CONFIG.NUM_MI {7} \
+  CONFIG.NUM_SI {4} \
+] [get_bd_cells microblaze_0_axi_periph]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_cdma_0/M_AXI] -boundary_type upper [get_bd_intf_pins microblaze_0_axi_periph/S02_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_cdma_0/M_AXI_SG] -boundary_type upper [get_bd_intf_pins microblaze_0_axi_periph/S03_AXI]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins microblaze_0_axi_periph/M06_AXI] [get_bd_intf_pins axi_cdma_0/S_AXI_LITE]
+connect_bd_net [get_bd_pins microblaze_0_axi_periph/S02_ACLK] [get_bd_pins mig_7series_0/ui_clk]
+connect_bd_net [get_bd_pins axi_cdma_0/m_axi_aclk] [get_bd_pins mig_7series_0/ui_clk]
+connect_bd_net [get_bd_pins axi_cdma_0/s_axi_lite_aclk] [get_bd_pins mig_7series_0/ui_clk]
+connect_bd_net [get_bd_pins axi_cdma_0/s_axi_lite_aresetn] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn]
+connect_bd_net [get_bd_pins microblaze_0_axi_periph/S02_ARESETN] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn]
+connect_bd_net [get_bd_pins microblaze_0_axi_periph/S03_ARESETN] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn]
+connect_bd_net [get_bd_pins microblaze_0_axi_periph/M06_ARESETN] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn]
+connect_bd_net [get_bd_pins microblaze_0_axi_periph/M06_ACLK] [get_bd_pins mig_7series_0/ui_clk]
+connect_bd_net [get_bd_pins microblaze_0_axi_periph/S03_ACLK] [get_bd_pins mig_7series_0/ui_clk]
+startgroup
+set_property CONFIG.NUM_PORTS {4} [get_bd_cells xlconcat_0]
+endgroup
+connect_bd_net [get_bd_pins axi_cdma_0/cdma_introut] [get_bd_pins xlconcat_0/In3]
+save_bd_design
+assign_bd_address -target_address_space /microblaze_0/Data [get_bd_addr_segs axi_cdma_0/S_AXI_LITE/Reg] -force
+set_property offset 0x42000000 [get_bd_addr_segs {microblaze_0/Data/SEG_axi_cdma_0_Reg}]
+assign_bd_address -target_address_space /microblaze_0/Instruction [get_bd_addr_segs axi_cdma_0/S_AXI_LITE/Reg] -force
+assign_bd_address -target_address_space /axi_cdma_0/Data [get_bd_addr_segs mig_7series_0/memmap/memaddr] -force
+assign_bd_address -target_address_space /axi_cdma_0/Data_SG [get_bd_addr_segs mig_7series_0/memmap/memaddr] -force
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
 open_hw_manager
 connect_hw_server -allow_non_jtag
+connect_hw_server -url 10.104.126.159:3121 -allow_non_jtag
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/200300BCCB1AB]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/200300BCCB1AB]
 open_hw_target
-set_property PROGRAM.FILE {C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
 current_hw_device [get_hw_devices xc7k325t_0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k325t_0] 0]
 set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
-set_property PROGRAM.FILE {C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
 program_hw_devices [get_hw_devices xc7k325t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
-write_hw_platform -fixed -include_bit -force -file C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/system_wrapper.xsa
+write_hw_platform -fixed -include_bit -force -file /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/system_wrapper.xsa
 set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
-set_property PROGRAM.FILE {C:/amd_work/genesys2/proj5/genesys_2_2024_1-main/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+open_bd_design {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.srcs/sources_1/bd/system/system.bd}
+connect_hw_server -url 10.104.127.14:3121 -allow_non_jtag
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/200300BCCB1AB]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/200300BCCB1AB]
+open_hw_target
+set_property PROGRAM.FILE {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+current_hw_device [get_hw_devices xc7k325t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+program_hw_devices [get_hw_devices xc7k325t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+open_bd_design {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.srcs/sources_1/bd/system/system.bd}
+delete_bd_objs [get_bd_intf_nets microblaze_0_axi_periph_M06_AXI]
+undo
+startgroup
+set_property -dict [list \
+  CONFIG.NUM_MI {7} \
+  CONFIG.NUM_SI {2} \
+] [get_bd_cells microblaze_0_axi_periph]
+delete_bd_objs [get_bd_intf_nets axi_cdma_0_M_AXI] [get_bd_intf_nets axi_cdma_0_M_AXI_SG]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 smartconnect_0
+endgroup
+set_property location {5.5 2590 1041} [get_bd_cells mig_7series_0]
+set_property location {6.5 3083 1075} [get_bd_cells mig_7series_0]
+set_property location {5 1923 878} [get_bd_cells axi_cdma_0]
+set_property location {5.5 2558 846} [get_bd_cells smartconnect_0]
+connect_bd_net [get_bd_pins smartconnect_0/aresetn] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn]
+connect_bd_net [get_bd_pins smartconnect_0/aclk] [get_bd_pins mig_7series_0/ui_clk]
+startgroup
+set_property CONFIG.C_INCLUDE_SG {0} [get_bd_cells axi_cdma_0]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins smartconnect_0/S00_AXI] [get_bd_intf_pins axi_cdma_0/M_AXI]
+undo
+connect_bd_intf_net [get_bd_intf_pins smartconnect_0/S01_AXI] [get_bd_intf_pins axi_cdma_0/M_AXI]
+delete_bd_objs [get_bd_intf_nets microblaze_0_axi_periph_M02_AXI]
+connect_bd_intf_net [get_bd_intf_pins mig_7series_0/S_AXI] [get_bd_intf_pins smartconnect_0/M00_AXI]
+connect_bd_intf_net [get_bd_intf_pins smartconnect_0/S00_AXI] -boundary_type upper [get_bd_intf_pins microblaze_0_axi_periph/M02_AXI]
+set_property location {5.5 2189 837} [get_bd_cells smartconnect_0]
+set_property location {6.5 2513 1054} [get_bd_cells mig_7series_0]
+set_property location {2733 76} [get_bd_intf_ports usb_uart]
+regenerate_bd_layout
+set_property location {5 1838 -16} [get_bd_cells axi_uartlite_0]
+regenerate_bd_layout
+assign_bd_address -target_address_space /microblaze_0/Data [get_bd_addr_segs mig_7series_0/memmap/memaddr] -force
+assign_bd_address -target_address_space /microblaze_0/Instruction [get_bd_addr_segs mig_7series_0/memmap/memaddr] -force
+assign_bd_address -target_address_space /axi_cdma_0/Data [get_bd_addr_segs mig_7series_0/memmap/memaddr] -force
+validate_bd_design
+save_bd_design
+reset_run synth_1
+reset_run system_xbar_0_synth_1
+reset_run system_axi_cdma_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file /home/asanche4/Master/nanoupv2025/genesys_2_2024_1/system_wrapper.xsa
+connect_hw_server -url HYB-PFIADRS2RCs:3121 -allow_non_jtag
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/200300BCCB1AB]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/200300BCCB1AB]
+open_hw_target
+set_property PROGRAM.FILE {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
+current_hw_device [get_hw_devices xc7k325t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k325t_0]
+set_property PROGRAM.FILE {/home/asanche4/Master/nanoupv2025/genesys_2_2024_1/genesys2_basic.runs/impl_1/system_wrapper.bit} [get_hw_devices xc7k325t_0]
 program_hw_devices [get_hw_devices xc7k325t_0]
 refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
